@@ -1,0 +1,503 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 55;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		31D161FB2801C2CA00454BF0 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31D161FA2801C2CA00454BF0 /* AppDelegate.swift */; };
+		31D161FD2801C2CA00454BF0 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31D161FC2801C2CA00454BF0 /* SceneDelegate.swift */; };
+		31D162022801C2CA00454BF0 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 31D162002801C2CA00454BF0 /* Main.storyboard */; };
+		31D162042801C2CB00454BF0 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 31D162032801C2CB00454BF0 /* Assets.xcassets */; };
+		31D162072801C2CB00454BF0 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 31D162052801C2CB00454BF0 /* LaunchScreen.storyboard */; };
+		31D162102801C2E000454BF0 /* Then in Frameworks */ = {isa = PBXBuildFile; productRef = 31D1620F2801C2E000454BF0 /* Then */; };
+		31D162132801C2EA00454BF0 /* SnapKit in Frameworks */ = {isa = PBXBuildFile; productRef = 31D162122801C2EA00454BF0 /* SnapKit */; };
+		31D1621D2801C37200454BF0 /* MettingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31D1621C2801C37200454BF0 /* MettingViewController.swift */; };
+		31D1621F2801C37C00454BF0 /* PayViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31D1621E2801C37C00454BF0 /* PayViewController.swift */; };
+		31D162212801C38700454BF0 /* PersonViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31D162202801C38700454BF0 /* PersonViewController.swift */; };
+		31D162232801C39200454BF0 /* TravelMapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31D162222801C39200454BF0 /* TravelMapViewController.swift */; };
+		31D162252801C39D00454BF0 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31D162242801C39D00454BF0 /* ViewController.swift */; };
+		31D162282801C3B200454BF0 /* MettingTableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31D162272801C3B200454BF0 /* MettingTableView.swift */; };
+		31D1622A2801C3BB00454BF0 /* MettingTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31D162292801C3BB00454BF0 /* MettingTableViewCell.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		31D161F72801C2CA00454BF0 /* TravelDutch.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TravelDutch.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		31D161FA2801C2CA00454BF0 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		31D161FC2801C2CA00454BF0 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
+		31D162012801C2CA00454BF0 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		31D162032801C2CB00454BF0 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		31D162062801C2CB00454BF0 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		31D162082801C2CB00454BF0 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		31D1621C2801C37200454BF0 /* MettingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MettingViewController.swift; sourceTree = "<group>"; };
+		31D1621E2801C37C00454BF0 /* PayViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PayViewController.swift; sourceTree = "<group>"; };
+		31D162202801C38700454BF0 /* PersonViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersonViewController.swift; sourceTree = "<group>"; };
+		31D162222801C39200454BF0 /* TravelMapViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TravelMapViewController.swift; sourceTree = "<group>"; };
+		31D162242801C39D00454BF0 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		31D162272801C3B200454BF0 /* MettingTableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MettingTableView.swift; sourceTree = "<group>"; };
+		31D162292801C3BB00454BF0 /* MettingTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MettingTableViewCell.swift; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		31D161F42801C2CA00454BF0 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				31D162102801C2E000454BF0 /* Then in Frameworks */,
+				31D162132801C2EA00454BF0 /* SnapKit in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		31D161EE2801C2CA00454BF0 = {
+			isa = PBXGroup;
+			children = (
+				31D161F92801C2CA00454BF0 /* TravelDutch */,
+				31D161F82801C2CA00454BF0 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		31D161F82801C2CA00454BF0 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				31D161F72801C2CA00454BF0 /* TravelDutch.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		31D161F92801C2CA00454BF0 /* TravelDutch */ = {
+			isa = PBXGroup;
+			children = (
+				31D162192801C33F00454BF0 /* View */,
+				31D162182801C33500454BF0 /* Utility */,
+				31D162172801C33000454BF0 /* Service */,
+				31D162162801C32700454BF0 /* Repository */,
+				31D162152801C32200454BF0 /* Model */,
+				31D162142801C31800454BF0 /* Entity */,
+				31D161FA2801C2CA00454BF0 /* AppDelegate.swift */,
+				31D161FC2801C2CA00454BF0 /* SceneDelegate.swift */,
+				31D162002801C2CA00454BF0 /* Main.storyboard */,
+				31D162032801C2CB00454BF0 /* Assets.xcassets */,
+				31D162052801C2CB00454BF0 /* LaunchScreen.storyboard */,
+				31D162082801C2CB00454BF0 /* Info.plist */,
+			);
+			path = TravelDutch;
+			sourceTree = "<group>";
+		};
+		31D162142801C31800454BF0 /* Entity */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Entity;
+			sourceTree = "<group>";
+		};
+		31D162152801C32200454BF0 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		31D162162801C32700454BF0 /* Repository */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Repository;
+			sourceTree = "<group>";
+		};
+		31D162172801C33000454BF0 /* Service */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Service;
+			sourceTree = "<group>";
+		};
+		31D162182801C33500454BF0 /* Utility */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Utility;
+			sourceTree = "<group>";
+		};
+		31D162192801C33F00454BF0 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				31D1621B2801C36100454BF0 /* Core */,
+				31D1621A2801C35A00454BF0 /* Component */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		31D1621A2801C35A00454BF0 /* Component */ = {
+			isa = PBXGroup;
+			children = (
+				31D162262801C3A400454BF0 /* MettingTable */,
+			);
+			path = Component;
+			sourceTree = "<group>";
+		};
+		31D1621B2801C36100454BF0 /* Core */ = {
+			isa = PBXGroup;
+			children = (
+				31D162242801C39D00454BF0 /* ViewController.swift */,
+				31D162222801C39200454BF0 /* TravelMapViewController.swift */,
+				31D1621C2801C37200454BF0 /* MettingViewController.swift */,
+				31D1621E2801C37C00454BF0 /* PayViewController.swift */,
+				31D162202801C38700454BF0 /* PersonViewController.swift */,
+			);
+			path = Core;
+			sourceTree = "<group>";
+		};
+		31D162262801C3A400454BF0 /* MettingTable */ = {
+			isa = PBXGroup;
+			children = (
+				31D162272801C3B200454BF0 /* MettingTableView.swift */,
+				31D162292801C3BB00454BF0 /* MettingTableViewCell.swift */,
+			);
+			path = MettingTable;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		31D161F62801C2CA00454BF0 /* TravelDutch */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 31D1620B2801C2CB00454BF0 /* Build configuration list for PBXNativeTarget "TravelDutch" */;
+			buildPhases = (
+				31D161F32801C2CA00454BF0 /* Sources */,
+				31D161F42801C2CA00454BF0 /* Frameworks */,
+				31D161F52801C2CA00454BF0 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = TravelDutch;
+			packageProductDependencies = (
+				31D1620F2801C2E000454BF0 /* Then */,
+				31D162122801C2EA00454BF0 /* SnapKit */,
+			);
+			productName = TravelDutch;
+			productReference = 31D161F72801C2CA00454BF0 /* TravelDutch.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		31D161EF2801C2CA00454BF0 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				BuildIndependentTargetsInParallel = 1;
+				LastSwiftUpdateCheck = 1330;
+				LastUpgradeCheck = 1330;
+				TargetAttributes = {
+					31D161F62801C2CA00454BF0 = {
+						CreatedOnToolsVersion = 13.3;
+					};
+				};
+			};
+			buildConfigurationList = 31D161F22801C2CA00454BF0 /* Build configuration list for PBXProject "TravelDutch" */;
+			compatibilityVersion = "Xcode 13.0";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 31D161EE2801C2CA00454BF0;
+			packageReferences = (
+				31D1620E2801C2E000454BF0 /* XCRemoteSwiftPackageReference "Then" */,
+				31D162112801C2EA00454BF0 /* XCRemoteSwiftPackageReference "SnapKit" */,
+			);
+			productRefGroup = 31D161F82801C2CA00454BF0 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				31D161F62801C2CA00454BF0 /* TravelDutch */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		31D161F52801C2CA00454BF0 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				31D162072801C2CB00454BF0 /* LaunchScreen.storyboard in Resources */,
+				31D162042801C2CB00454BF0 /* Assets.xcassets in Resources */,
+				31D162022801C2CA00454BF0 /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		31D161F32801C2CA00454BF0 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				31D162212801C38700454BF0 /* PersonViewController.swift in Sources */,
+				31D161FB2801C2CA00454BF0 /* AppDelegate.swift in Sources */,
+				31D1621D2801C37200454BF0 /* MettingViewController.swift in Sources */,
+				31D161FD2801C2CA00454BF0 /* SceneDelegate.swift in Sources */,
+				31D162282801C3B200454BF0 /* MettingTableView.swift in Sources */,
+				31D162252801C39D00454BF0 /* ViewController.swift in Sources */,
+				31D1621F2801C37C00454BF0 /* PayViewController.swift in Sources */,
+				31D1622A2801C3BB00454BF0 /* MettingTableViewCell.swift in Sources */,
+				31D162232801C39200454BF0 /* TravelMapViewController.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		31D162002801C2CA00454BF0 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				31D162012801C2CA00454BF0 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		31D162052801C2CB00454BF0 /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				31D162062801C2CB00454BF0 /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		31D162092801C2CB00454BF0 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++17";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.4;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		31D1620A2801C2CB00454BF0 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++17";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.4;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		31D1620C2801C2CB00454BF0 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = H5J82V5SHR;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = TravelDutch/Info.plist;
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
+				INFOPLIST_KEY_UIMainStoryboardFile = Main;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.haeseong.TravelDutch;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		31D1620D2801C2CB00454BF0 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = H5J82V5SHR;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = TravelDutch/Info.plist;
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
+				INFOPLIST_KEY_UIMainStoryboardFile = Main;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.haeseong.TravelDutch;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		31D161F22801C2CA00454BF0 /* Build configuration list for PBXProject "TravelDutch" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				31D162092801C2CB00454BF0 /* Debug */,
+				31D1620A2801C2CB00454BF0 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		31D1620B2801C2CB00454BF0 /* Build configuration list for PBXNativeTarget "TravelDutch" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				31D1620C2801C2CB00454BF0 /* Debug */,
+				31D1620D2801C2CB00454BF0 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		31D1620E2801C2E000454BF0 /* XCRemoteSwiftPackageReference "Then" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/devxoul/Then";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 2.0.0;
+			};
+		};
+		31D162112801C2EA00454BF0 /* XCRemoteSwiftPackageReference "SnapKit" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/SnapKit/SnapKit.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 5.0.0;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		31D1620F2801C2E000454BF0 /* Then */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 31D1620E2801C2E000454BF0 /* XCRemoteSwiftPackageReference "Then" */;
+			productName = Then;
+		};
+		31D162122801C2EA00454BF0 /* SnapKit */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 31D162112801C2EA00454BF0 /* XCRemoteSwiftPackageReference "SnapKit" */;
+			productName = SnapKit;
+		};
+/* End XCSwiftPackageProductDependency section */
+	};
+	rootObject = 31D161EF2801C2CA00454BF0 /* Project object */;
+}
