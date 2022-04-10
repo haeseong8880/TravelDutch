@@ -19,7 +19,7 @@ class MettingTableView: UITableView {
         self.delegate = self
         self.dataSource = self
         
-        register(MettingTableViewCell.self, forCellReuseIdentifier: "MettingTableViewCell")
+        register(MettingTableViewCell.self, forCellReuseIdentifier: MettingTableViewCell.id)
     }
     
     required init?(coder: NSCoder) {
@@ -45,7 +45,7 @@ extension MettingTableView: UITableViewDelegate, UITableViewDataSource{
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        guard let cell = tableView.dequeueReusableCell(withIdentifier: "MettingTableViewCell", for: indexPath) as? MettingTableViewCell else { return UITableViewCell() }
+        guard let cell = tableView.dequeueReusableCell(withIdentifier: MettingTableViewCell.id, for: indexPath) as? MettingTableViewCell else { return UITableViewCell() }
         return cell
     }
     

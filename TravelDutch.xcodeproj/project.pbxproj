@@ -21,6 +21,8 @@
 		31D162252801C39D00454BF0 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31D162242801C39D00454BF0 /* ViewController.swift */; };
 		31D162282801C3B200454BF0 /* MettingTableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31D162272801C3B200454BF0 /* MettingTableView.swift */; };
 		31D1622A2801C3BB00454BF0 /* MettingTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31D162292801C3BB00454BF0 /* MettingTableViewCell.swift */; };
+		31D162372803087200454BF0 /* PersonTableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31D162362803087200454BF0 /* PersonTableView.swift */; };
+		31D16239280308A800454BF0 /* PersonTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31D16238280308A800454BF0 /* PersonTableViewCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -38,6 +40,8 @@
 		31D162242801C39D00454BF0 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		31D162272801C3B200454BF0 /* MettingTableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MettingTableView.swift; sourceTree = "<group>"; };
 		31D162292801C3BB00454BF0 /* MettingTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MettingTableViewCell.swift; sourceTree = "<group>"; };
+		31D162362803087200454BF0 /* PersonTableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersonTableView.swift; sourceTree = "<group>"; };
+		31D16238280308A800454BF0 /* PersonTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersonTableViewCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -53,6 +57,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		317D436128030AC100DC209F /* PersonTable */ = {
+			isa = PBXGroup;
+			children = (
+				31D162362803087200454BF0 /* PersonTableView.swift */,
+				31D16238280308A800454BF0 /* PersonTableViewCell.swift */,
+			);
+			path = PersonTable;
+			sourceTree = "<group>";
+		};
 		31D161EE2801C2CA00454BF0 = {
 			isa = PBXGroup;
 			children = (
@@ -136,6 +149,7 @@
 			isa = PBXGroup;
 			children = (
 				31D162262801C3A400454BF0 /* MettingTable */,
+				317D436128030AC100DC209F /* PersonTable */,
 			);
 			path = Component;
 			sourceTree = "<group>";
@@ -244,8 +258,10 @@
 				31D161FB2801C2CA00454BF0 /* AppDelegate.swift in Sources */,
 				31D1621D2801C37200454BF0 /* MettingViewController.swift in Sources */,
 				31D161FD2801C2CA00454BF0 /* SceneDelegate.swift in Sources */,
+				31D16239280308A800454BF0 /* PersonTableViewCell.swift in Sources */,
 				31D162282801C3B200454BF0 /* MettingTableView.swift in Sources */,
 				31D162252801C39D00454BF0 /* ViewController.swift in Sources */,
+				31D162372803087200454BF0 /* PersonTableView.swift in Sources */,
 				31D1621F2801C37C00454BF0 /* PayViewController.swift in Sources */,
 				31D1622A2801C3BB00454BF0 /* MettingTableViewCell.swift in Sources */,
 				31D162232801C39200454BF0 /* TravelMapViewController.swift in Sources */,
