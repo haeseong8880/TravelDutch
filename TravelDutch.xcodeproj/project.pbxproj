@@ -145,9 +145,9 @@
 			children = (
 				31D162242801C39D00454BF0 /* ViewController.swift */,
 				31D162222801C39200454BF0 /* TravelMapViewController.swift */,
+				31D162202801C38700454BF0 /* PersonViewController.swift */,
 				31D1621C2801C37200454BF0 /* MettingViewController.swift */,
 				31D1621E2801C37C00454BF0 /* PayViewController.swift */,
-				31D162202801C38700454BF0 /* PersonViewController.swift */,
 			);
 			path = Core;
 			sourceTree = "<group>";

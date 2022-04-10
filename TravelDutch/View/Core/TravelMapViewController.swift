@@ -5,7 +5,6 @@
 //  Created by haeseongJung on 2022/04/09.
 //
 
-import Foundation
 import UIKit
 import MapKit
 
@@ -23,7 +22,7 @@ class TravelMapViewController: UIViewController, MKMapViewDelegate {
     private let destination = UILabel().then {
         $0.text = "주소가 등록되어 있지 않습니다."
         $0.numberOfLines = 0
-        $0.font = .systemFont(ofSize: 20, weight: .semibold)
+        $0.font = .systemFont(ofSize: 18, weight: .light)
     }
     
     private let copyButtton = UIButton().then {
