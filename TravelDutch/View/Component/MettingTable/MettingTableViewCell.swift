@@ -10,10 +10,9 @@ import UIKit
 import SnapKit
 
 class MettingTableViewCell: UITableViewCell {
-    
-    //MARK: - Properties
     static let id = "MettingTableViewCell"
     
+    //MARK: - Properties
     private let tmpLabel = UILabel().then {
         $0.text = "임시 모임"
     }

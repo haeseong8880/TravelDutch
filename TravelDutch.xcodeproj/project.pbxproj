@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		317D43632803E40500DC209F /* MoneyManageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 317D43622803E40500DC209F /* MoneyManageViewController.swift */; };
+		317D43652803ED5A00DC209F /* MemberEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 317D43642803ED5A00DC209F /* MemberEntity.swift */; };
+		317D4369280449EC00DC209F /* Enum.swift in Sources */ = {isa = PBXBuildFile; fileRef = 317D4368280449EC00DC209F /* Enum.swift */; };
 		31D161FB2801C2CA00454BF0 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31D161FA2801C2CA00454BF0 /* AppDelegate.swift */; };
 		31D161FD2801C2CA00454BF0 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31D161FC2801C2CA00454BF0 /* SceneDelegate.swift */; };
 		31D162022801C2CA00454BF0 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 31D162002801C2CA00454BF0 /* Main.storyboard */; };
@@ -26,6 +29,9 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		317D43622803E40500DC209F /* MoneyManageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MoneyManageViewController.swift; sourceTree = "<group>"; };
+		317D43642803ED5A00DC209F /* MemberEntity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MemberEntity.swift; sourceTree = "<group>"; };
+		317D4368280449EC00DC209F /* Enum.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Enum.swift; sourceTree = "<group>"; };
 		31D161F72801C2CA00454BF0 /* TravelDutch.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TravelDutch.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		31D161FA2801C2CA00454BF0 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		31D161FC2801C2CA00454BF0 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -104,6 +110,7 @@
 		31D162142801C31800454BF0 /* Entity */ = {
 			isa = PBXGroup;
 			children = (
+				317D43642803ED5A00DC209F /* MemberEntity.swift */,
 			);
 			path = Entity;
 			sourceTree = "<group>";
@@ -132,6 +139,7 @@
 		31D162182801C33500454BF0 /* Utility */ = {
 			isa = PBXGroup;
 			children = (
+				317D4368280449EC00DC209F /* Enum.swift */,
 			);
 			path = Utility;
 			sourceTree = "<group>";
@@ -160,8 +168,9 @@
 				31D162242801C39D00454BF0 /* ViewController.swift */,
 				31D162222801C39200454BF0 /* TravelMapViewController.swift */,
 				31D162202801C38700454BF0 /* PersonViewController.swift */,
-				31D1621C2801C37200454BF0 /* MettingViewController.swift */,
+				317D43622803E40500DC209F /* MoneyManageViewController.swift */,
 				31D1621E2801C37C00454BF0 /* PayViewController.swift */,
+				31D1621C2801C37200454BF0 /* MettingViewController.swift */,
 			);
 			path = Core;
 			sourceTree = "<group>";
@@ -257,13 +266,16 @@
 				31D162212801C38700454BF0 /* PersonViewController.swift in Sources */,
 				31D161FB2801C2CA00454BF0 /* AppDelegate.swift in Sources */,
 				31D1621D2801C37200454BF0 /* MettingViewController.swift in Sources */,
+				317D43652803ED5A00DC209F /* MemberEntity.swift in Sources */,
 				31D161FD2801C2CA00454BF0 /* SceneDelegate.swift in Sources */,
 				31D16239280308A800454BF0 /* PersonTableViewCell.swift in Sources */,
 				31D162282801C3B200454BF0 /* MettingTableView.swift in Sources */,
+				317D4369280449EC00DC209F /* Enum.swift in Sources */,
 				31D162252801C39D00454BF0 /* ViewController.swift in Sources */,
 				31D162372803087200454BF0 /* PersonTableView.swift in Sources */,
 				31D1621F2801C37C00454BF0 /* PayViewController.swift in Sources */,
 				31D1622A2801C3BB00454BF0 /* MettingTableViewCell.swift in Sources */,
+				317D43632803E40500DC209F /* MoneyManageViewController.swift in Sources */,
 				31D162232801C39200454BF0 /* TravelMapViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

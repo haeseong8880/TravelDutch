@@ -78,17 +78,14 @@ class TravelMapViewController: UIViewController, MKMapViewDelegate {
     
     private func mapConfigure() {
         self.mapView = MKMapView(frame: view.frame)
-        let oahuCenter = CLLocation(latitude: 37.541, longitude: 126.986)
-        let region = MKCoordinateRegion(
-            center: oahuCenter.coordinate,
-            latitudinalMeters: 0.1,
-            longitudinalMeters: 0.1)
-        mapView.setCameraBoundary(
-            MKMapView.CameraBoundary(coordinateRegion: region),
-            animated: true)
         
-        let zoomRange = MKMapView.CameraZoomRange(maxCenterCoordinateDistance: 200000)
-        mapView.setCameraZoomRange(zoomRange, animated: true)
+        let annotation = MKPointAnnotation()
+        // 나중에 좌표 변경
+        annotation.coordinate = CLLocationCoordinate2D(latitude: 37.5666805, longitude: 126.9784147)
+        mapView.addAnnotation(annotation)
+        
+        let region = MKCoordinateRegion(center: annotation.coordinate, latitudinalMeters: 500, longitudinalMeters: 500)
+        mapView.setRegion(region, animated: true)
     }
     
     // MARK: - layout
@@ -117,7 +114,7 @@ class TravelMapViewController: UIViewController, MKMapViewDelegate {
         mapView.snp.makeConstraints {
             $0.top.equalTo(destination.snp.bottom).offset(10)
             $0.bottom.equalTo(view.safeAreaLayoutGuide)
-            $0.leading.trailing.equalToSuperview()
+            $0.leading.trailing.equalToSuperview().inset(5)
         }
         
     }

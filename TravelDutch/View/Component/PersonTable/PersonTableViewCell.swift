@@ -8,28 +8,55 @@
 import UIKit
 
 class PersonTableViewCell: UITableViewCell {
-    //MARK: - Properties
     static let id = "PersonTableViewCell"
+    //MARK: - Properties
+    var name: String?
+    var money: String?
     
-    var tmpString: String?
-    
-    private let tmpText = UILabel().then {
-        $0.backgroundColor = .gray
+    private let nameLabel = UILabel().then {
+        $0.font = .systemFont(ofSize: 20, weight: .bold)
     }
     
+    private let getMoneyLabel = UILabel().then {
+        $0.text = "받은 금액 ➡️ "
+        $0.font = .systemFont(ofSize: 20, weight: .semibold)
+    }
+    
+    private let moneyLabel = UILabel().then {
+        $0.font = .systemFont(ofSize: 20, weight: .semibold)
+    }
+    
+    // MARK: - layoutSubViews
     override func layoutSubviews() {
         super.layoutSubviews()
-        tmpText.text = tmpString
         
+        nameLabel.text = name
+        moneyLabel.text = money
         layout()
     }
     
+    // MARK: - layout
     private func layout() {
-        [ tmpText ].forEach { addSubview($0) }
         
-        tmpText.snp.makeConstraints {
+        // 전체적으로 손 볼 예정 임시
+        [ nameLabel, getMoneyLabel, moneyLabel ].forEach { addSubview($0) }
+        
+        nameLabel.snp.makeConstraints {
             $0.top.equalToSuperview().inset(10)
-            $0.leading.equalToSuperview().inset(10)
+            $0.leading.equalToSuperview().inset(30)
+            $0.width.equalTo(100)
+        }
+        
+        getMoneyLabel.snp.makeConstraints {
+            $0.top.equalToSuperview().inset(10)
+//            $0.leading.equalTo(nameLabel.snp.trailing).offset(20)
+            $0.trailing.equalTo(moneyLabel.snp.leading)
+        }
+        
+        moneyLabel.snp.makeConstraints {
+            $0.top.equalToSuperview().inset(10)
+            $0.leading.equalTo(getMoneyLabel.snp.trailing).offset(10)
+            $0.trailing.equalToSuperview().inset(10)
         }
     }
 }
