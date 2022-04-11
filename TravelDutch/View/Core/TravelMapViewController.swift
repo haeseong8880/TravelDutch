@@ -73,7 +73,6 @@ class TravelMapViewController: UIViewController, MKMapViewDelegate {
         self.navigationItem.largeTitleDisplayMode = .always
         self.navigationController?.navigationBar.prefersLargeTitles = true
         mapConfigure()
-        
     }
     
     private func mapConfigure() {
