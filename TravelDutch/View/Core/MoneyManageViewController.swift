@@ -11,6 +11,7 @@ class MoneyManageViewcontroller: UIViewController {
     
     // MARK: - Properties
     private var total: Int = 0
+    private let moneyManageTableView = MoneyManageTableView()
     var pickerList = ["교통 🚎", "숙박 🏨", "식비 🍚", "쇼핑 🛍", "기타"]
     
     var toolbar: UIToolbar!
@@ -39,6 +40,11 @@ class MoneyManageViewcontroller: UIViewController {
     private let usedMoneyLabel = UILabel().then {
         $0.font = .systemFont(ofSize: 20, weight: .light)
         $0.text = "사용 금액 입력 ➡️ "
+    }
+    
+    private let moneyHistoryLabel = UILabel().then {
+        $0.font = .systemFont(ofSize: 30, weight: .bold)
+        $0.text = "사용 내역 📝"
     }
     
     private let usedTypeTextField = UITextField().then {
@@ -120,7 +126,7 @@ class MoneyManageViewcontroller: UIViewController {
     
     // MARK: - Layout
     private func layout() {
-        [ noticeLabel, totalLabel, usedTypeLabel, usedTypeTextField, usedCommentLabel, usedCommentTextField, usedMoneyLabel, usedMoneyTextField, moneyAddButton ].forEach { view.addSubview($0) }
+        [ noticeLabel, totalLabel, usedTypeLabel, usedTypeTextField, usedCommentLabel, usedCommentTextField, usedMoneyLabel, usedMoneyTextField, moneyAddButton, moneyHistoryLabel, moneyManageTableView ].forEach { view.addSubview($0) }
         
         noticeLabel.snp.makeConstraints {
             $0.top.equalTo(view.safeAreaLayoutGuide).inset(10)
@@ -141,7 +147,7 @@ class MoneyManageViewcontroller: UIViewController {
         
         usedTypeTextField.snp.makeConstraints {
             $0.top.equalTo(totalLabel.snp.bottom).offset(10)
-            $0.leading.equalTo(usedTypeLabel.snp.trailing).inset(20)
+            $0.leading.equalTo(usedTypeLabel.snp.trailing).offset(10)
             $0.trailing.equalToSuperview().inset(20)
         }
         
@@ -153,7 +159,7 @@ class MoneyManageViewcontroller: UIViewController {
         
         usedCommentTextField.snp.makeConstraints {
             $0.top.equalTo(usedTypeLabel.snp.bottom).offset(20)
-            $0.leading.equalTo(usedTypeLabel.snp.trailing).inset(20)
+            $0.leading.equalTo(usedTypeLabel.snp.trailing).offset(10)
             $0.trailing.equalToSuperview().inset(20)
         }
         
@@ -165,7 +171,7 @@ class MoneyManageViewcontroller: UIViewController {
         
         usedMoneyTextField.snp.makeConstraints {
             $0.top.equalTo(usedCommentLabel.snp.bottom).offset(20)
-            $0.leading.equalTo(usedMoneyLabel.snp.trailing).inset(20)
+            $0.leading.equalTo(usedMoneyLabel.snp.trailing).offset(10)
             $0.trailing.equalToSuperview().inset(20)
         }
         
@@ -174,6 +180,20 @@ class MoneyManageViewcontroller: UIViewController {
             $0.trailing.equalToSuperview().inset(20)
             $0.width.equalTo(100)
         }
+        
+        moneyHistoryLabel.snp.makeConstraints {
+            $0.top.equalTo(moneyAddButton.snp.bottom).offset(20)
+            $0.leading.equalToSuperview().inset(20)
+            $0.trailing.equalToSuperview().inset(20)
+        }
+        
+        moneyManageTableView.snp.makeConstraints {
+            $0.top.equalTo(moneyHistoryLabel.snp.bottom).offset(10)
+            $0.leading.equalToSuperview().inset(10)
+            $0.trailing.equalToSuperview().inset(20)
+            $0.bottom.equalTo(view.safeAreaLayoutGuide)
+        }
+        
     }
     
     // MARK: - action

@@ -8,7 +8,7 @@
 import Foundation
 import UIKit
 
-class PayViewController: UIViewController {
+class ReportViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         

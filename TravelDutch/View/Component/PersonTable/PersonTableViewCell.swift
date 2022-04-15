@@ -9,6 +9,7 @@ import UIKit
 
 class PersonTableViewCell: UITableViewCell {
     static let id = "PersonTableViewCell"
+    
     //MARK: - Properties
     var name: String?
     var money: String?
@@ -49,7 +50,6 @@ class PersonTableViewCell: UITableViewCell {
         
         getMoneyLabel.snp.makeConstraints {
             $0.top.equalToSuperview().inset(10)
-//            $0.leading.equalTo(nameLabel.snp.trailing).offset(20)
             $0.trailing.equalTo(moneyLabel.snp.leading)
         }
         

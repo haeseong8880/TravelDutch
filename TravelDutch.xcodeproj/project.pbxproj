@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		31257DE928099B8600F81BD7 /* MoneyManageEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31257DE828099B8600F81BD7 /* MoneyManageEntity.swift */; };
+		312669B42809484500DB1110 /* MoneyManageTableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 312669B32809484500DB1110 /* MoneyManageTableView.swift */; };
+		312669B62809485700DB1110 /* MoneyManageTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 312669B52809485700DB1110 /* MoneyManageTableViewCell.swift */; };
 		317D43632803E40500DC209F /* MoneyManageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 317D43622803E40500DC209F /* MoneyManageViewController.swift */; };
 		317D43652803ED5A00DC209F /* MemberEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 317D43642803ED5A00DC209F /* MemberEntity.swift */; };
 		317D4369280449EC00DC209F /* Enum.swift in Sources */ = {isa = PBXBuildFile; fileRef = 317D4368280449EC00DC209F /* Enum.swift */; };
@@ -20,7 +23,7 @@
 		31D162102801C2E000454BF0 /* Then in Frameworks */ = {isa = PBXBuildFile; productRef = 31D1620F2801C2E000454BF0 /* Then */; };
 		31D162132801C2EA00454BF0 /* SnapKit in Frameworks */ = {isa = PBXBuildFile; productRef = 31D162122801C2EA00454BF0 /* SnapKit */; };
 		31D1621D2801C37200454BF0 /* MettingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31D1621C2801C37200454BF0 /* MettingViewController.swift */; };
-		31D1621F2801C37C00454BF0 /* PayViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31D1621E2801C37C00454BF0 /* PayViewController.swift */; };
+		31D1621F2801C37C00454BF0 /* ReportViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31D1621E2801C37C00454BF0 /* ReportViewController.swift */; };
 		31D162212801C38700454BF0 /* PersonViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31D162202801C38700454BF0 /* PersonViewController.swift */; };
 		31D162232801C39200454BF0 /* TravelMapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31D162222801C39200454BF0 /* TravelMapViewController.swift */; };
 		31D162252801C39D00454BF0 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31D162242801C39D00454BF0 /* ViewController.swift */; };
@@ -31,6 +34,9 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		31257DE828099B8600F81BD7 /* MoneyManageEntity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MoneyManageEntity.swift; sourceTree = "<group>"; };
+		312669B32809484500DB1110 /* MoneyManageTableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MoneyManageTableView.swift; sourceTree = "<group>"; };
+		312669B52809485700DB1110 /* MoneyManageTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MoneyManageTableViewCell.swift; sourceTree = "<group>"; };
 		317D43622803E40500DC209F /* MoneyManageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MoneyManageViewController.swift; sourceTree = "<group>"; };
 		317D43642803ED5A00DC209F /* MemberEntity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MemberEntity.swift; sourceTree = "<group>"; };
 		317D4368280449EC00DC209F /* Enum.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Enum.swift; sourceTree = "<group>"; };
@@ -44,7 +50,7 @@
 		31D162062801C2CB00454BF0 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		31D162082801C2CB00454BF0 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		31D1621C2801C37200454BF0 /* MettingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MettingViewController.swift; sourceTree = "<group>"; };
-		31D1621E2801C37C00454BF0 /* PayViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PayViewController.swift; sourceTree = "<group>"; };
+		31D1621E2801C37C00454BF0 /* ReportViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReportViewController.swift; sourceTree = "<group>"; };
 		31D162202801C38700454BF0 /* PersonViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersonViewController.swift; sourceTree = "<group>"; };
 		31D162222801C39200454BF0 /* TravelMapViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TravelMapViewController.swift; sourceTree = "<group>"; };
 		31D162242801C39D00454BF0 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -67,6 +73,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		312669B2280947DC00DB1110 /* MoneyManage */ = {
+			isa = PBXGroup;
+			children = (
+				312669B32809484500DB1110 /* MoneyManageTableView.swift */,
+				312669B52809485700DB1110 /* MoneyManageTableViewCell.swift */,
+			);
+			path = MoneyManage;
+			sourceTree = "<group>";
+		};
 		317D436128030AC100DC209F /* PersonTable */ = {
 			isa = PBXGroup;
 			children = (
@@ -115,6 +130,7 @@
 			isa = PBXGroup;
 			children = (
 				317D43642803ED5A00DC209F /* MemberEntity.swift */,
+				31257DE828099B8600F81BD7 /* MoneyManageEntity.swift */,
 			);
 			path = Entity;
 			sourceTree = "<group>";
@@ -162,8 +178,9 @@
 		31D1621A2801C35A00454BF0 /* Component */ = {
 			isa = PBXGroup;
 			children = (
-				31D162262801C3A400454BF0 /* MettingTable */,
 				317D436128030AC100DC209F /* PersonTable */,
+				312669B2280947DC00DB1110 /* MoneyManage */,
+				31D162262801C3A400454BF0 /* MettingTable */,
 			);
 			path = Component;
 			sourceTree = "<group>";
@@ -175,7 +192,7 @@
 				31D162222801C39200454BF0 /* TravelMapViewController.swift */,
 				31D162202801C38700454BF0 /* PersonViewController.swift */,
 				317D43622803E40500DC209F /* MoneyManageViewController.swift */,
-				31D1621E2801C37C00454BF0 /* PayViewController.swift */,
+				31D1621E2801C37C00454BF0 /* ReportViewController.swift */,
 				31D1621C2801C37200454BF0 /* MettingViewController.swift */,
 			);
 			path = Core;
@@ -272,18 +289,21 @@
 				31D162212801C38700454BF0 /* PersonViewController.swift in Sources */,
 				31D161FB2801C2CA00454BF0 /* AppDelegate.swift in Sources */,
 				31D1621D2801C37200454BF0 /* MettingViewController.swift in Sources */,
+				312669B42809484500DB1110 /* MoneyManageTableView.swift in Sources */,
 				317D43652803ED5A00DC209F /* MemberEntity.swift in Sources */,
 				31D161FD2801C2CA00454BF0 /* SceneDelegate.swift in Sources */,
 				31D16239280308A800454BF0 /* PersonTableViewCell.swift in Sources */,
+				31257DE928099B8600F81BD7 /* MoneyManageEntity.swift in Sources */,
 				317D436B2804775200DC209F /* PieCharView.swift in Sources */,
 				31D162282801C3B200454BF0 /* MettingTableView.swift in Sources */,
 				317D436D28081DBA00DC209F /* Extension.swift in Sources */,
 				317D4369280449EC00DC209F /* Enum.swift in Sources */,
 				31D162252801C39D00454BF0 /* ViewController.swift in Sources */,
 				31D162372803087200454BF0 /* PersonTableView.swift in Sources */,
-				31D1621F2801C37C00454BF0 /* PayViewController.swift in Sources */,
+				31D1621F2801C37C00454BF0 /* ReportViewController.swift in Sources */,
 				31D1622A2801C3BB00454BF0 /* MettingTableViewCell.swift in Sources */,
 				317D43632803E40500DC209F /* MoneyManageViewController.swift in Sources */,
+				312669B62809485700DB1110 /* MoneyManageTableViewCell.swift in Sources */,
 				31D162232801C39200454BF0 /* TravelMapViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
