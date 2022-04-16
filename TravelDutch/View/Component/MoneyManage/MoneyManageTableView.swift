@@ -52,13 +52,13 @@ extension MoneyManageTableView: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         guard let cell = tableView.dequeueReusableCell(withIdentifier: MoneyManageTableViewCell.id, for: indexPath) as? MoneyManageTableViewCell else { return UITableViewCell() }
         
-        cell.items = MoneyManageEntity(payType: "교통 🚎", payTypeNum: 2, PayComment: "방콕까지 비행기 값방콕까지 비행기 값방콕까지 비행기 값방콕까지 비행기 값", moneyHistory: "40000000원", timeStamp: Date.now)
+        cell.items = MoneyManageEntity(payType: "교통 🚎", payTypeNum: 2, PayComment: "방콕까지 비행기 값", moneyHistory: "40000000원", timeStamp: Date.now)
         
         return cell
     }
 
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        return 80
+        return 100
     }
     
 }
