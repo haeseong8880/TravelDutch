@@ -7,6 +7,7 @@
 
 import UIKit
 import MapKit
+import WebKit
 
 class TravelMapViewController: UIViewController, MKMapViewDelegate {
     
@@ -16,13 +17,23 @@ class TravelMapViewController: UIViewController, MKMapViewDelegate {
     
     private let destinationLabel = UILabel().then {
         $0.text = "목적지 ➡"
-        $0.font = .systemFont(ofSize: 20, weight: .semibold)
+        $0.font = .systemFont(ofSize: 22, weight: .semibold)
     }
     
     private let destination = UILabel().then {
         $0.text = "주소가 등록되어 있지 않습니다."
+        $0.isHidden = true
         $0.numberOfLines = 0
         $0.font = .systemFont(ofSize: 18, weight: .light)
+    }
+    
+    private let destinationSearchButton = UIButton().then {
+        $0.setTitle("주소 검색", for: .normal)
+        $0.titleLabel?.font = .systemFont(ofSize: 20, weight: .bold)
+        $0.setTitleColor(.white, for: .normal)
+        $0.backgroundColor = .systemBlue
+        $0.layer.cornerRadius = 5
+        $0.addTarget(self, action: #selector(openKakaoPost), for: .touchUpInside)
     }
     
     private let copyButtton = UIButton().then {
@@ -33,6 +44,13 @@ class TravelMapViewController: UIViewController, MKMapViewDelegate {
     @objc private func copyClipboard() {
         UIPasteboard.general.string = self.destinationText
         self.showToast(message: "주소 저장이 완료 되었습니다." )
+    }
+    
+    @objc private func openKakaoPost() {
+        let kakaoZipCodeVC = KakaoZipCodeVC()
+        kakaoZipCodeVC.delegate = self
+        
+        self.present(kakaoZipCodeVC, animated: true)
     }
     
     private func showToast(message : String, font: UIFont = UIFont.systemFont(ofSize: 20.0)) {
@@ -60,10 +78,9 @@ class TravelMapViewController: UIViewController, MKMapViewDelegate {
         // 임시 텍스트
         destinationText = "서울특별시 중구 세종대로 110"
         destination.text = destinationText ?? ""
-        
+        print(destination.isHidden)
         configure()
         layout()
-        
     }
     
     // MARK: - configure
@@ -80,7 +97,7 @@ class TravelMapViewController: UIViewController, MKMapViewDelegate {
         
         let annotation = MKPointAnnotation()
         // 나중에 좌표 변경
-        annotation.coordinate = CLLocationCoordinate2D(latitude: 37.5666805, longitude: 126.9784147)
+        annotation.coordinate = CLLocationCoordinate2D(latitude: 37.3573207289405, longitude: 127.247016335597)
         mapView.addAnnotation(annotation)
         
         let region = MKCoordinateRegion(center: annotation.coordinate, latitudinalMeters: 500, longitudinalMeters: 500)
@@ -89,7 +106,7 @@ class TravelMapViewController: UIViewController, MKMapViewDelegate {
     
     // MARK: - layout
     private func layout() {
-        [ destinationLabel, destination, copyButtton, mapView ].forEach { view.addSubview($0) }
+        [ destinationLabel, destination, destinationSearchButton, copyButtton, mapView ].forEach { view.addSubview($0) }
         
         destinationLabel.snp.makeConstraints {
             $0.top.equalTo(view.safeAreaLayoutGuide).inset(10)
@@ -104,6 +121,12 @@ class TravelMapViewController: UIViewController, MKMapViewDelegate {
             $0.trailing.equalToSuperview().inset(30)
         }
         
+        destinationSearchButton.snp.makeConstraints {
+            $0.top.equalTo(destination.snp.top).inset(-8)
+            $0.leading.equalTo(destinationLabel.snp.trailing).offset(50)
+            $0.width.equalTo(150)
+        }
+        
         copyButtton.snp.makeConstraints {
             $0.top.equalTo(destinationLabel.snp.top)
             $0.leading.equalTo(destination.snp.trailing)
@@ -116,5 +139,13 @@ class TravelMapViewController: UIViewController, MKMapViewDelegate {
             $0.leading.trailing.equalToSuperview().inset(5)
         }
         
+    }
+}
+
+extension TravelMapViewController: sendDataDelegate {
+    func sendData(address: String) {
+        destination.text = address
+        destination.isHidden = false
+        destinationSearchButton.isHidden = true
     }
 }

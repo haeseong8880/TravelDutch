@@ -15,6 +15,9 @@
 		317D4369280449EC00DC209F /* Enum.swift in Sources */ = {isa = PBXBuildFile; fileRef = 317D4368280449EC00DC209F /* Enum.swift */; };
 		317D436B2804775200DC209F /* PieCharView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 317D436A2804775200DC209F /* PieCharView.swift */; };
 		317D436D28081DBA00DC209F /* Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 317D436C28081DBA00DC209F /* Extension.swift */; };
+		319132CF280C3723003C14D0 /* TravelData.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 319132CD280C3723003C14D0 /* TravelData.xcdatamodeld */; };
+		319132D1280C37C2003C14D0 /* DestinationEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 319132D0280C37C2003C14D0 /* DestinationEntity.swift */; };
+		319132D4280C3F6E003C14D0 /* KakaoZipCodeVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 319132D3280C3F6E003C14D0 /* KakaoZipCodeVC.swift */; };
 		31D161FB2801C2CA00454BF0 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31D161FA2801C2CA00454BF0 /* AppDelegate.swift */; };
 		31D161FD2801C2CA00454BF0 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31D161FC2801C2CA00454BF0 /* SceneDelegate.swift */; };
 		31D162022801C2CA00454BF0 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 31D162002801C2CA00454BF0 /* Main.storyboard */; };
@@ -42,6 +45,9 @@
 		317D4368280449EC00DC209F /* Enum.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Enum.swift; sourceTree = "<group>"; };
 		317D436A2804775200DC209F /* PieCharView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PieCharView.swift; sourceTree = "<group>"; };
 		317D436C28081DBA00DC209F /* Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extension.swift; sourceTree = "<group>"; };
+		319132CE280C3723003C14D0 /* TravelData.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = TravelData.xcdatamodel; sourceTree = "<group>"; };
+		319132D0280C37C2003C14D0 /* DestinationEntity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DestinationEntity.swift; sourceTree = "<group>"; };
+		319132D3280C3F6E003C14D0 /* KakaoZipCodeVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KakaoZipCodeVC.swift; sourceTree = "<group>"; };
 		31D161F72801C2CA00454BF0 /* TravelDutch.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TravelDutch.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		31D161FA2801C2CA00454BF0 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		31D161FC2801C2CA00454BF0 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -91,6 +97,22 @@
 			path = PersonTable;
 			sourceTree = "<group>";
 		};
+		319132CC280C36FF003C14D0 /* CoreData */ = {
+			isa = PBXGroup;
+			children = (
+				319132CD280C3723003C14D0 /* TravelData.xcdatamodeld */,
+			);
+			path = CoreData;
+			sourceTree = "<group>";
+		};
+		319132D2280C3F60003C14D0 /* KakaoPost */ = {
+			isa = PBXGroup;
+			children = (
+				319132D3280C3F6E003C14D0 /* KakaoZipCodeVC.swift */,
+			);
+			path = KakaoPost;
+			sourceTree = "<group>";
+		};
 		31D161EE2801C2CA00454BF0 = {
 			isa = PBXGroup;
 			children = (
@@ -116,6 +138,7 @@
 				31D162162801C32700454BF0 /* Repository */,
 				31D162152801C32200454BF0 /* Model */,
 				31D162142801C31800454BF0 /* Entity */,
+				319132CC280C36FF003C14D0 /* CoreData */,
 				31D161FA2801C2CA00454BF0 /* AppDelegate.swift */,
 				31D161FC2801C2CA00454BF0 /* SceneDelegate.swift */,
 				31D162002801C2CA00454BF0 /* Main.storyboard */,
@@ -131,6 +154,7 @@
 			children = (
 				317D43642803ED5A00DC209F /* MemberEntity.swift */,
 				31257DE828099B8600F81BD7 /* MoneyManageEntity.swift */,
+				319132D0280C37C2003C14D0 /* DestinationEntity.swift */,
 			);
 			path = Entity;
 			sourceTree = "<group>";
@@ -178,6 +202,7 @@
 		31D1621A2801C35A00454BF0 /* Component */ = {
 			isa = PBXGroup;
 			children = (
+				319132D2280C3F60003C14D0 /* KakaoPost */,
 				317D436128030AC100DC209F /* PersonTable */,
 				312669B2280947DC00DB1110 /* MoneyManage */,
 				31D162262801C3A400454BF0 /* MettingTable */,
@@ -289,13 +314,16 @@
 				31D162212801C38700454BF0 /* PersonViewController.swift in Sources */,
 				31D161FB2801C2CA00454BF0 /* AppDelegate.swift in Sources */,
 				31D1621D2801C37200454BF0 /* MettingViewController.swift in Sources */,
+				319132CF280C3723003C14D0 /* TravelData.xcdatamodeld in Sources */,
 				312669B42809484500DB1110 /* MoneyManageTableView.swift in Sources */,
 				317D43652803ED5A00DC209F /* MemberEntity.swift in Sources */,
 				31D161FD2801C2CA00454BF0 /* SceneDelegate.swift in Sources */,
 				31D16239280308A800454BF0 /* PersonTableViewCell.swift in Sources */,
 				31257DE928099B8600F81BD7 /* MoneyManageEntity.swift in Sources */,
+				319132D4280C3F6E003C14D0 /* KakaoZipCodeVC.swift in Sources */,
 				317D436B2804775200DC209F /* PieCharView.swift in Sources */,
 				31D162282801C3B200454BF0 /* MettingTableView.swift in Sources */,
+				319132D1280C37C2003C14D0 /* DestinationEntity.swift in Sources */,
 				317D436D28081DBA00DC209F /* Extension.swift in Sources */,
 				317D4369280449EC00DC209F /* Enum.swift in Sources */,
 				31D162252801C39D00454BF0 /* ViewController.swift in Sources */,
@@ -554,6 +582,19 @@
 			productName = SnapKit;
 		};
 /* End XCSwiftPackageProductDependency section */
+
+/* Begin XCVersionGroup section */
+		319132CD280C3723003C14D0 /* TravelData.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				319132CE280C3723003C14D0 /* TravelData.xcdatamodel */,
+			);
+			currentVersion = 319132CE280C3723003C14D0 /* TravelData.xcdatamodel */;
+			path = TravelData.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
 	};
 	rootObject = 31D161EF2801C2CA00454BF0 /* Project object */;
 }
