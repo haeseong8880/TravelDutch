@@ -18,6 +18,8 @@
 		319132CF280C3723003C14D0 /* TravelData.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 319132CD280C3723003C14D0 /* TravelData.xcdatamodeld */; };
 		319132D1280C37C2003C14D0 /* DestinationEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 319132D0280C37C2003C14D0 /* DestinationEntity.swift */; };
 		319132D4280C3F6E003C14D0 /* KakaoZipCodeVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 319132D3280C3F6E003C14D0 /* KakaoZipCodeVC.swift */; };
+		319132D6280D01F7003C14D0 /* KakaoMapRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 319132D5280D01F7003C14D0 /* KakaoMapRepository.swift */; };
+		319132D8280D059A003C14D0 /* KakaoMapEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 319132D7280D059A003C14D0 /* KakaoMapEntity.swift */; };
 		31D161FB2801C2CA00454BF0 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31D161FA2801C2CA00454BF0 /* AppDelegate.swift */; };
 		31D161FD2801C2CA00454BF0 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31D161FC2801C2CA00454BF0 /* SceneDelegate.swift */; };
 		31D162022801C2CA00454BF0 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 31D162002801C2CA00454BF0 /* Main.storyboard */; };
@@ -48,6 +50,8 @@
 		319132CE280C3723003C14D0 /* TravelData.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = TravelData.xcdatamodel; sourceTree = "<group>"; };
 		319132D0280C37C2003C14D0 /* DestinationEntity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DestinationEntity.swift; sourceTree = "<group>"; };
 		319132D3280C3F6E003C14D0 /* KakaoZipCodeVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KakaoZipCodeVC.swift; sourceTree = "<group>"; };
+		319132D5280D01F7003C14D0 /* KakaoMapRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KakaoMapRepository.swift; sourceTree = "<group>"; };
+		319132D7280D059A003C14D0 /* KakaoMapEntity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KakaoMapEntity.swift; sourceTree = "<group>"; };
 		31D161F72801C2CA00454BF0 /* TravelDutch.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TravelDutch.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		31D161FA2801C2CA00454BF0 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		31D161FC2801C2CA00454BF0 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -155,6 +159,7 @@
 				317D43642803ED5A00DC209F /* MemberEntity.swift */,
 				31257DE828099B8600F81BD7 /* MoneyManageEntity.swift */,
 				319132D0280C37C2003C14D0 /* DestinationEntity.swift */,
+				319132D7280D059A003C14D0 /* KakaoMapEntity.swift */,
 			);
 			path = Entity;
 			sourceTree = "<group>";
@@ -169,6 +174,7 @@
 		31D162162801C32700454BF0 /* Repository */ = {
 			isa = PBXGroup;
 			children = (
+				319132D5280D01F7003C14D0 /* KakaoMapRepository.swift */,
 			);
 			path = Repository;
 			sourceTree = "<group>";
@@ -325,8 +331,10 @@
 				31D162282801C3B200454BF0 /* MettingTableView.swift in Sources */,
 				319132D1280C37C2003C14D0 /* DestinationEntity.swift in Sources */,
 				317D436D28081DBA00DC209F /* Extension.swift in Sources */,
+				319132D6280D01F7003C14D0 /* KakaoMapRepository.swift in Sources */,
 				317D4369280449EC00DC209F /* Enum.swift in Sources */,
 				31D162252801C39D00454BF0 /* ViewController.swift in Sources */,
+				319132D8280D059A003C14D0 /* KakaoMapEntity.swift in Sources */,
 				31D162372803087200454BF0 /* PersonTableView.swift in Sources */,
 				31D1621F2801C37C00454BF0 /* ReportViewController.swift in Sources */,
 				31D1622A2801C3BB00454BF0 /* MettingTableViewCell.swift in Sources */,

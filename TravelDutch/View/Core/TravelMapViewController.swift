@@ -13,7 +13,11 @@ class TravelMapViewController: UIViewController, MKMapViewDelegate {
     
     // MARK: - Properties
     private var mapView: MKMapView = MKMapView()
+    private let kakaoMapRepository = KakaoMapRepository()
     var destinationText: String?
+    var kakaoResponse: KakaoMapEntity?
+    var latitudeCustom: Double = 37.5666805
+    var longitudeCustom: Double = 126.9784147
     
     private let destinationLabel = UILabel().then {
         $0.text = "목적지 ➡"
@@ -97,7 +101,7 @@ class TravelMapViewController: UIViewController, MKMapViewDelegate {
         
         let annotation = MKPointAnnotation()
         // 나중에 좌표 변경
-        annotation.coordinate = CLLocationCoordinate2D(latitude: 37.3573207289405, longitude: 127.247016335597)
+        annotation.coordinate = CLLocationCoordinate2D(latitude: latitudeCustom, longitude: longitudeCustom)
         mapView.addAnnotation(annotation)
         
         let region = MKCoordinateRegion(center: annotation.coordinate, latitudinalMeters: 500, longitudinalMeters: 500)
@@ -144,8 +148,17 @@ class TravelMapViewController: UIViewController, MKMapViewDelegate {
 
 extension TravelMapViewController: sendDataDelegate {
     func sendData(address: String) {
-        destination.text = address
-        destination.isHidden = false
-        destinationSearchButton.isHidden = true
+//        destination.text = address
+        kakaoMapRepository.fetchKaKaoApi(of: address)
+//        destination.isHidden = false
+//        destinationSearchButton.isHidden = true
+    }
+    
+    func reloadData(item: KakaoMapEntity) {
+        kakaoResponse = item
+        print(kakaoResponse)
+        latitudeCustom = Double(item.documents.first!.x)!
+        longitudeCustom = Double(item.documents.first!.y)!
+        self.view.setNeedsLayout()
     }
 }
