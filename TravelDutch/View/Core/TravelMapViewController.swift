@@ -15,9 +15,6 @@ class TravelMapViewController: UIViewController, MKMapViewDelegate {
     private var mapView: MKMapView = MKMapView()
     private let kakaoMapRepository = KakaoMapRepository()
     var destinationText: String?
-    var kakaoResponse: KakaoMapEntity?
-    var latitudeCustom: Double = 37.5666805
-    var longitudeCustom: Double = 126.9784147
     
     private let destinationLabel = UILabel().then {
         $0.text = "목적지 ➡"
@@ -43,10 +40,11 @@ class TravelMapViewController: UIViewController, MKMapViewDelegate {
     private let copyButtton = UIButton().then {
         $0.setImage(UIImage(systemName: "doc.on.doc"), for: .normal)
         $0.addTarget(self, action: #selector(copyClipboard), for: .touchUpInside)
+        $0.isHidden = true
     }
     
     @objc private func copyClipboard() {
-        UIPasteboard.general.string = self.destinationText
+        UIPasteboard.general.string = self.destination.text
         self.showToast(message: "주소 저장이 완료 되었습니다." )
     }
     
@@ -79,10 +77,6 @@ class TravelMapViewController: UIViewController, MKMapViewDelegate {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        // 임시 텍스트
-        destinationText = "서울특별시 중구 세종대로 110"
-        destination.text = destinationText ?? ""
-        print(destination.isHidden)
         configure()
         layout()
     }
@@ -93,19 +87,6 @@ class TravelMapViewController: UIViewController, MKMapViewDelegate {
         self.navigationItem.title = "여행 📍"
         self.navigationItem.largeTitleDisplayMode = .always
         self.navigationController?.navigationBar.prefersLargeTitles = true
-        mapConfigure()
-    }
-    
-    private func mapConfigure() {
-        self.mapView = MKMapView(frame: view.frame)
-        
-        let annotation = MKPointAnnotation()
-        // 나중에 좌표 변경
-        annotation.coordinate = CLLocationCoordinate2D(latitude: latitudeCustom, longitude: longitudeCustom)
-        mapView.addAnnotation(annotation)
-        
-        let region = MKCoordinateRegion(center: annotation.coordinate, latitudinalMeters: 500, longitudinalMeters: 500)
-        mapView.setRegion(region, animated: true)
     }
     
     // MARK: - layout
@@ -142,23 +123,49 @@ class TravelMapViewController: UIViewController, MKMapViewDelegate {
             $0.bottom.equalTo(view.safeAreaLayoutGuide)
             $0.leading.trailing.equalToSuperview().inset(5)
         }
-        
     }
 }
 
 extension TravelMapViewController: sendDataDelegate {
     func sendData(address: String) {
-//        destination.text = address
-        kakaoMapRepository.fetchKaKaoApi(of: address)
-//        destination.isHidden = false
-//        destinationSearchButton.isHidden = true
+        kakaoMapRepository.fetchKaKaoApi(of: address) { [weak self] result in
+            guard let self = self else { return }
+            switch result {
+            case let .success(result):
+                DispatchQueue.main.async {
+                    self.copyButtton.isHidden = false
+                    self.destination.isHidden = false
+                    self.destinationSearchButton.isHidden = true
+                    self.destination.text = address
+                }
+                self.setAnnotation(latitudeValue: Double(result.documents.first!.y)!, longitudeValue: Double(result.documents.first!.x)!, delta: 0.005, title: "목적지", subtitle: "목적지")
+            case let .failure(error):
+                debugPrint("Error : \(error)")
+            }
+        }
     }
     
-    func reloadData(item: KakaoMapEntity) {
-        kakaoResponse = item
-        print(kakaoResponse)
-        latitudeCustom = Double(item.documents.first!.x)!
-        longitudeCustom = Double(item.documents.first!.y)!
-        self.view.setNeedsLayout()
+    // 위도와 경도, 스팬(영역 폭)을 입력받아 지도에 표시
+    func goLocation(latitudeValue: CLLocationDegrees,
+                    longtudeValue: CLLocationDegrees,
+                    delta span: Double) -> CLLocationCoordinate2D {
+        let pLocation = CLLocationCoordinate2DMake(latitudeValue, longtudeValue)
+        let spanValue = MKCoordinateSpan(latitudeDelta: span, longitudeDelta: span)
+        let pRegion = MKCoordinateRegion(center: pLocation, span: spanValue)
+        mapView.setRegion(pRegion, animated: true)
+        return pLocation
+    }
+    
+    // 특정 위도와 경도에 핀 설치하고 핀에 타이틀과 서브 타이틀의 문자열 표시
+    func setAnnotation(latitudeValue: CLLocationDegrees,
+                       longitudeValue: CLLocationDegrees,
+                       delta span :Double,
+                       title strTitle: String,
+                       subtitle strSubTitle:String){
+        let annotation = MKPointAnnotation()
+        annotation.coordinate = goLocation(latitudeValue: latitudeValue, longtudeValue: longitudeValue, delta: span)
+        annotation.title = strTitle
+        annotation.subtitle = strSubTitle
+        mapView.addAnnotation(annotation)
     }
 }

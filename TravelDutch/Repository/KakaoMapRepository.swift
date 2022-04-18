@@ -10,7 +10,7 @@ import Foundation
 class KakaoMapRepository {
     static let shared = KakaoMapRepository()
     
-    func fetchKaKaoApi(of destination: String) {
+    func fetchKaKaoApi(of destination: String, completionHandler: @escaping (Result<KakaoMapEntity, Error>) -> Void) {
         let urlStr = "https://dapi.kakao.com/v2/local/search/address.json?query=\(destination)"
         guard let encoded = urlStr.addingPercentEncoding(withAllowedCharacters: .urlQueryAllowed) else { return }
         guard let urlEncode = URL(string: encoded) else { return }
@@ -27,18 +27,16 @@ class KakaoMapRepository {
                 print("ERROR: URLSettion data task \(error?.localizedDescription ?? "")")
                 return
             }
-            
             switch response.statusCode {
             case (200...299):
-                //                print("DEBUG: \(searchCoordinate)")
-                DispatchQueue.main.async {
-                    let item: KakaoMapEntity = searchCoordinate
-                    TravelMapViewController().reloadData(item: item)
-                }
+                print("DEBUG: \(searchCoordinate)")
+                completionHandler(.success(searchCoordinate))
             case (400...499):
                 print("Error: Client \(response.statusCode)")
+                completionHandler(.failure("Error: Client" as! Error))
             case (500...599):
                 print("Error: Server \(response.statusCode)")
+                completionHandler(.failure("Error: Server" as! Error))
             default:
                 print("Error: Server \(response.statusCode)")
             }
