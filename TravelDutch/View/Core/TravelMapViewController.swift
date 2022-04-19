@@ -37,12 +37,34 @@ class TravelMapViewController: UIViewController, MKMapViewDelegate {
         $0.addTarget(self, action: #selector(openKakaoPost), for: .touchUpInside)
     }
     
+    private let deleteSaveDestinationButton = UIButton().then {
+        $0.setTitle("주소 변경", for: .normal)
+        $0.titleLabel?.font = .systemFont(ofSize: 18, weight: .bold)
+        $0.setTitleColor(.white, for: .normal)
+        $0.backgroundColor = .systemBlue
+        $0.layer.cornerRadius = 5
+        $0.isHidden = true
+        $0.addTarget(self, action: #selector(changeAddress), for: .touchUpInside)
+    }
+    
     private let copyButtton = UIButton().then {
-        $0.setImage(UIImage(systemName: "doc.on.doc"), for: .normal)
+        $0.setTitle("주소 복사", for: .normal)
+        $0.titleLabel?.font = .systemFont(ofSize: 18, weight: .bold)
+        $0.setTitleColor(.white, for: .normal)
+        $0.backgroundColor = .systemBlue
+        $0.layer.cornerRadius = 5
+        $0.isHidden = true
         $0.addTarget(self, action: #selector(copyClipboard), for: .touchUpInside)
     }
     
     // MARK: - Action
+    @objc private func changeAddress() {
+        DestinationManager.shared.deleteDestination(id: 0) { result in
+            print(result)
+            print("click")
+        }
+    }
+    
     @objc private func copyClipboard() {
         UIPasteboard.general.string = self.destinationLabel.text
         self.showToast(message: "주소 저장이 완료 되었습니다." )
@@ -97,10 +119,14 @@ class TravelMapViewController: UIViewController, MKMapViewDelegate {
                 self.copyButtton.isHidden = true
                 self.destinationLabel.isHidden = true
                 self.destinationSearchButton.isHidden = false
+                self.deleteSaveDestinationButton.isHidden = true
+                self.copyButtton.isHidden = true
             } else {
                 self.copyButtton.isHidden = false
                 self.destinationLabel.isHidden = false
                 self.destinationSearchButton.isHidden = true
+                self.deleteSaveDestinationButton.isHidden = false
+                self.copyButtton.isHidden = false
                 self.destinationLabel.text = firstCoreData.first?.destination_ko
                 self.setAnnotation(latitudeValue: firstCoreData.first!.latitude, longitudeValue: firstCoreData.first!.longitude, delta: 0.005, title: "목적지", subtitle: "목적지")
             }
@@ -109,35 +135,43 @@ class TravelMapViewController: UIViewController, MKMapViewDelegate {
     
     // MARK: - layout
     private func layout() {
-        [ destLabel, destinationLabel, destinationSearchButton, copyButtton, mapView ].forEach { view.addSubview($0) }
+        [ deleteSaveDestinationButton, copyButtton, destLabel, destinationLabel, destinationSearchButton, mapView ].forEach { view.addSubview($0) }
         
         destLabel.snp.makeConstraints {
-            $0.top.equalTo(view.safeAreaLayoutGuide).inset(10)
+            $0.top.equalTo(view.safeAreaLayoutGuide)
             $0.leading.equalToSuperview().inset(20)
-            $0.height.equalTo(20)
+            $0.height.equalTo(30)
             $0.width.equalTo(100)
         }
         
         destinationLabel.snp.makeConstraints {
-            $0.top.equalTo(destLabel.snp.top)
+            $0.top.equalTo(view.safeAreaLayoutGuide).inset(5)
             $0.leading.equalTo(destLabel.snp.trailing)
-            $0.trailing.equalToSuperview().inset(30)
+            $0.trailing.equalToSuperview().inset(10)
         }
         
         destinationSearchButton.snp.makeConstraints {
-            $0.top.equalTo(destinationLabel.snp.top).inset(-8)
+            $0.top.equalTo(view.safeAreaLayoutGuide).inset(-5)
             $0.leading.equalTo(destLabel.snp.trailing).offset(50)
             $0.width.equalTo(150)
         }
         
+        deleteSaveDestinationButton.snp.makeConstraints {
+            $0.top.equalTo(destLabel.snp.bottom).offset(5)
+            $0.trailing.equalTo(copyButtton.snp.leading).inset(-20)
+            $0.height.equalTo(30)
+            $0.width.equalTo(80)
+        }
+        
         copyButtton.snp.makeConstraints {
-            $0.top.equalTo(destLabel.snp.top)
-            $0.leading.equalTo(destinationLabel.snp.trailing)
-            $0.trailing.equalTo(view.safeAreaLayoutGuide)
+            $0.top.equalTo(destLabel.snp.bottom).offset(5)
+            $0.trailing.equalToSuperview().inset(20)
+            $0.height.equalTo(30)
+            $0.width.equalTo(80)
         }
         
         mapView.snp.makeConstraints {
-            $0.top.equalTo(destLabel.snp.bottom).offset(10)
+            $0.top.equalTo(deleteSaveDestinationButton.snp.bottom).offset(10)
             $0.bottom.equalTo(view.safeAreaLayoutGuide)
             $0.leading.trailing.equalToSuperview().inset(5)
         }
