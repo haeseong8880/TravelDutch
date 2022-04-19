@@ -20,6 +20,10 @@
 		319132D4280C3F6E003C14D0 /* KakaoZipCodeVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 319132D3280C3F6E003C14D0 /* KakaoZipCodeVC.swift */; };
 		319132D6280D01F7003C14D0 /* KakaoMapRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 319132D5280D01F7003C14D0 /* KakaoMapRepository.swift */; };
 		319132D8280D059A003C14D0 /* KakaoMapEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 319132D7280D059A003C14D0 /* KakaoMapEntity.swift */; };
+		319132DF280E7247003C14D0 /* DestinationCoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 319132DD280E7247003C14D0 /* DestinationCoreDataClass.swift */; };
+		319132E0280E7247003C14D0 /* DestinationCoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 319132DE280E7247003C14D0 /* DestinationCoreDataProperties.swift */; };
+		319132E4280E738A003C14D0 /* DestinationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 319132E3280E738A003C14D0 /* DestinationManager.swift */; };
+		319132E8280E8AA5003C14D0 /* SettingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 319132E7280E8AA5003C14D0 /* SettingViewController.swift */; };
 		31D161FB2801C2CA00454BF0 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31D161FA2801C2CA00454BF0 /* AppDelegate.swift */; };
 		31D161FD2801C2CA00454BF0 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31D161FC2801C2CA00454BF0 /* SceneDelegate.swift */; };
 		31D162022801C2CA00454BF0 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 31D162002801C2CA00454BF0 /* Main.storyboard */; };
@@ -52,6 +56,10 @@
 		319132D3280C3F6E003C14D0 /* KakaoZipCodeVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KakaoZipCodeVC.swift; sourceTree = "<group>"; };
 		319132D5280D01F7003C14D0 /* KakaoMapRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KakaoMapRepository.swift; sourceTree = "<group>"; };
 		319132D7280D059A003C14D0 /* KakaoMapEntity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KakaoMapEntity.swift; sourceTree = "<group>"; };
+		319132DD280E7247003C14D0 /* DestinationCoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DestinationCoreDataClass.swift; sourceTree = "<group>"; };
+		319132DE280E7247003C14D0 /* DestinationCoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DestinationCoreDataProperties.swift; sourceTree = "<group>"; };
+		319132E3280E738A003C14D0 /* DestinationManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DestinationManager.swift; sourceTree = "<group>"; };
+		319132E7280E8AA5003C14D0 /* SettingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingViewController.swift; sourceTree = "<group>"; };
 		31D161F72801C2CA00454BF0 /* TravelDutch.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TravelDutch.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		31D161FA2801C2CA00454BF0 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		31D161FC2801C2CA00454BF0 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -104,6 +112,7 @@
 		319132CC280C36FF003C14D0 /* CoreData */ = {
 			isa = PBXGroup;
 			children = (
+				319132E2280E735E003C14D0 /* DestinationCoreData */,
 				319132CD280C3723003C14D0 /* TravelData.xcdatamodeld */,
 			);
 			path = CoreData;
@@ -115,6 +124,16 @@
 				319132D3280C3F6E003C14D0 /* KakaoZipCodeVC.swift */,
 			);
 			path = KakaoPost;
+			sourceTree = "<group>";
+		};
+		319132E2280E735E003C14D0 /* DestinationCoreData */ = {
+			isa = PBXGroup;
+			children = (
+				319132E3280E738A003C14D0 /* DestinationManager.swift */,
+				319132DD280E7247003C14D0 /* DestinationCoreDataClass.swift */,
+				319132DE280E7247003C14D0 /* DestinationCoreDataProperties.swift */,
+			);
+			path = DestinationCoreData;
 			sourceTree = "<group>";
 		};
 		31D161EE2801C2CA00454BF0 = {
@@ -224,6 +243,7 @@
 				31D162202801C38700454BF0 /* PersonViewController.swift */,
 				317D43622803E40500DC209F /* MoneyManageViewController.swift */,
 				31D1621E2801C37C00454BF0 /* ReportViewController.swift */,
+				319132E7280E8AA5003C14D0 /* SettingViewController.swift */,
 				31D1621C2801C37200454BF0 /* MettingViewController.swift */,
 			);
 			path = Core;
@@ -322,6 +342,7 @@
 				31D1621D2801C37200454BF0 /* MettingViewController.swift in Sources */,
 				319132CF280C3723003C14D0 /* TravelData.xcdatamodeld in Sources */,
 				312669B42809484500DB1110 /* MoneyManageTableView.swift in Sources */,
+				319132DF280E7247003C14D0 /* DestinationCoreDataClass.swift in Sources */,
 				317D43652803ED5A00DC209F /* MemberEntity.swift in Sources */,
 				31D161FD2801C2CA00454BF0 /* SceneDelegate.swift in Sources */,
 				31D16239280308A800454BF0 /* PersonTableViewCell.swift in Sources */,
@@ -335,11 +356,14 @@
 				317D4369280449EC00DC209F /* Enum.swift in Sources */,
 				31D162252801C39D00454BF0 /* ViewController.swift in Sources */,
 				319132D8280D059A003C14D0 /* KakaoMapEntity.swift in Sources */,
+				319132E8280E8AA5003C14D0 /* SettingViewController.swift in Sources */,
 				31D162372803087200454BF0 /* PersonTableView.swift in Sources */,
 				31D1621F2801C37C00454BF0 /* ReportViewController.swift in Sources */,
 				31D1622A2801C3BB00454BF0 /* MettingTableViewCell.swift in Sources */,
+				319132E0280E7247003C14D0 /* DestinationCoreDataProperties.swift in Sources */,
 				317D43632803E40500DC209F /* MoneyManageViewController.swift in Sources */,
 				312669B62809485700DB1110 /* MoneyManageTableViewCell.swift in Sources */,
+				319132E4280E738A003C14D0 /* DestinationManager.swift in Sources */,
 				31D162232801C39200454BF0 /* TravelMapViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

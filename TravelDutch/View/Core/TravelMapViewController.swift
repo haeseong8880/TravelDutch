@@ -16,14 +16,13 @@ class TravelMapViewController: UIViewController, MKMapViewDelegate {
     private let kakaoMapRepository = KakaoMapRepository()
     var destinationText: String?
     
-    private let destinationLabel = UILabel().then {
+    private let destLabel = UILabel().then {
         $0.text = "목적지 ➡"
         $0.font = .systemFont(ofSize: 22, weight: .semibold)
     }
     
-    private let destination = UILabel().then {
-        $0.text = "주소가 등록되어 있지 않습니다."
-        $0.isHidden = true
+    private let destinationLabel = UILabel().then {
+        $0.text = ""
         $0.numberOfLines = 0
         $0.font = .systemFont(ofSize: 18, weight: .light)
     }
@@ -33,6 +32,7 @@ class TravelMapViewController: UIViewController, MKMapViewDelegate {
         $0.titleLabel?.font = .systemFont(ofSize: 20, weight: .bold)
         $0.setTitleColor(.white, for: .normal)
         $0.backgroundColor = .systemBlue
+        $0.isHidden = true
         $0.layer.cornerRadius = 5
         $0.addTarget(self, action: #selector(openKakaoPost), for: .touchUpInside)
     }
@@ -40,11 +40,11 @@ class TravelMapViewController: UIViewController, MKMapViewDelegate {
     private let copyButtton = UIButton().then {
         $0.setImage(UIImage(systemName: "doc.on.doc"), for: .normal)
         $0.addTarget(self, action: #selector(copyClipboard), for: .touchUpInside)
-        $0.isHidden = true
     }
     
+    // MARK: - Action
     @objc private func copyClipboard() {
-        UIPasteboard.general.string = self.destination.text
+        UIPasteboard.general.string = self.destinationLabel.text
         self.showToast(message: "주소 저장이 완료 되었습니다." )
     }
     
@@ -77,6 +77,7 @@ class TravelMapViewController: UIViewController, MKMapViewDelegate {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        firstDataLoad()
         configure()
         layout()
     }
@@ -89,37 +90,54 @@ class TravelMapViewController: UIViewController, MKMapViewDelegate {
         self.navigationController?.navigationBar.prefersLargeTitles = true
     }
     
+    private func firstDataLoad() {
+        let firstCoreData: [Destination] = DestinationManager.shared.getDestination()
+        DispatchQueue.main.async {
+            if firstCoreData.isEmpty {
+                self.copyButtton.isHidden = true
+                self.destinationLabel.isHidden = true
+                self.destinationSearchButton.isHidden = false
+            } else {
+                self.copyButtton.isHidden = false
+                self.destinationLabel.isHidden = false
+                self.destinationSearchButton.isHidden = true
+                self.destinationLabel.text = firstCoreData.first?.destination_ko
+                self.setAnnotation(latitudeValue: firstCoreData.first!.latitude, longitudeValue: firstCoreData.first!.longitude, delta: 0.005, title: "목적지", subtitle: "목적지")
+            }
+        }
+    }
+    
     // MARK: - layout
     private func layout() {
-        [ destinationLabel, destination, destinationSearchButton, copyButtton, mapView ].forEach { view.addSubview($0) }
+        [ destLabel, destinationLabel, destinationSearchButton, copyButtton, mapView ].forEach { view.addSubview($0) }
         
-        destinationLabel.snp.makeConstraints {
+        destLabel.snp.makeConstraints {
             $0.top.equalTo(view.safeAreaLayoutGuide).inset(10)
             $0.leading.equalToSuperview().inset(20)
             $0.height.equalTo(20)
             $0.width.equalTo(100)
         }
         
-        destination.snp.makeConstraints {
-            $0.top.equalTo(destinationLabel.snp.top)
-            $0.leading.equalTo(destinationLabel.snp.trailing)
+        destinationLabel.snp.makeConstraints {
+            $0.top.equalTo(destLabel.snp.top)
+            $0.leading.equalTo(destLabel.snp.trailing)
             $0.trailing.equalToSuperview().inset(30)
         }
         
         destinationSearchButton.snp.makeConstraints {
-            $0.top.equalTo(destination.snp.top).inset(-8)
-            $0.leading.equalTo(destinationLabel.snp.trailing).offset(50)
+            $0.top.equalTo(destinationLabel.snp.top).inset(-8)
+            $0.leading.equalTo(destLabel.snp.trailing).offset(50)
             $0.width.equalTo(150)
         }
         
         copyButtton.snp.makeConstraints {
-            $0.top.equalTo(destinationLabel.snp.top)
-            $0.leading.equalTo(destination.snp.trailing)
+            $0.top.equalTo(destLabel.snp.top)
+            $0.leading.equalTo(destinationLabel.snp.trailing)
             $0.trailing.equalTo(view.safeAreaLayoutGuide)
         }
         
         mapView.snp.makeConstraints {
-            $0.top.equalTo(destination.snp.bottom).offset(10)
+            $0.top.equalTo(destLabel.snp.bottom).offset(10)
             $0.bottom.equalTo(view.safeAreaLayoutGuide)
             $0.leading.trailing.equalToSuperview().inset(5)
         }
@@ -132,13 +150,19 @@ extension TravelMapViewController: sendDataDelegate {
             guard let self = self else { return }
             switch result {
             case let .success(result):
-                DispatchQueue.main.async {
-                    self.copyButtton.isHidden = false
-                    self.destination.isHidden = false
-                    self.destinationSearchButton.isHidden = true
-                    self.destination.text = address
+                guard let latitude = Double(result.documents.first!.y), let longitude = Double(result.documents.first!.x) else { return }
+                self.setAnnotation(latitudeValue: latitude, longitudeValue: longitude, delta: 0.005, title: "목적지", subtitle: "목적지")
+                DestinationManager.shared.saveDestination(destination_ko: address, latitude: latitude, longitude: longitude) { result in
+                    if result {
+                        DispatchQueue.main.async {
+                            self.copyButtton.isHidden = false
+                            self.destinationLabel.isHidden = false
+                            self.destinationSearchButton.isHidden = true
+                            self.destinationLabel.text = address
+                        }
+                    }
                 }
-                self.setAnnotation(latitudeValue: Double(result.documents.first!.y)!, longitudeValue: Double(result.documents.first!.x)!, delta: 0.005, title: "목적지", subtitle: "목적지")
+                
             case let .failure(error):
                 debugPrint("Error : \(error)")
             }

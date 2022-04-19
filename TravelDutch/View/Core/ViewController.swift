@@ -12,6 +12,9 @@ class ViewController: UITabBarController {
     override func viewDidLoad() {
         super.viewDidLoad()
         rootViewConfigure()
+        
+        // Core 위치
+        print(FileManager.default.urls(for: .documentDirectory, in: .userDomainMask))
     }
     
     func rootViewConfigure() {
@@ -28,10 +31,13 @@ class ViewController: UITabBarController {
         let reportViewController = UINavigationController(rootViewController: ReportViewController())
         reportViewController.tabBarItem = UITabBarItem(title: "레포트", image: UIImage(systemName: "doc"), selectedImage: UIImage(systemName: "doc.fill"))
         
+        let settingViewController = UINavigationController(rootViewController: SettingViewController())
+        settingViewController.tabBarItem = UITabBarItem(title: "설정", image: UIImage(systemName: "gearshape"), selectedImage : UIImage(systemName: "gearshape.fill"))
+        
 //        let mettingViewController = UINavigationController(rootViewController: MettingViewController())
 //        mettingViewController.tabBarItem = UITabBarItem(title: "모임", image: UIImage(systemName: "bookmark"), selectedImage: UIImage(systemName: "bookmark.fill"))
         
-        viewControllers = [ travelViewController, personViewController, moneyManageViewController, reportViewController ]
+        viewControllers = [ travelViewController, personViewController, moneyManageViewController, reportViewController, settingViewController ]
     }
 }
 
