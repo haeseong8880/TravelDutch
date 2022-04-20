@@ -59,9 +59,12 @@ class PersonViewController: UIViewController {
         if name.isEmpty || money.isEmpty {
             return alert()
         }else {
-            personTableView.tableReload(member: MemberEntity(name: name, money: money + "원"))
-            memberTextField.text = nil
-            moneyTextField.text = nil
+            MemberMoneyManager.shared.saveMemberMoney(memberName: name, getMoney: Int64(money)!) { [weak self] result in
+                guard let self = self else { return }
+                self.personTableView.tableReload(member: MemberEntity(name: name, money: money + "원"))
+                self.memberTextField.text = nil
+                self.moneyTextField.text = nil
+            }
         }
     }
     
@@ -74,6 +77,15 @@ class PersonViewController: UIViewController {
     // MARK: - LifeCycle
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        let firstCoreData: [MemberMoney] = MemberMoneyManager.shared.getMemberMoney()
+
+        if !firstCoreData.isEmpty {
+            firstCoreData.forEach { result in
+                print("Object id => \(result.objectID.entity)")
+                self.personTableView.tableReload(member: MemberEntity(name: result.memberName!, money: String(result.getMoney) + "원"))
+            }
+        }
         
         configure()
         layout()

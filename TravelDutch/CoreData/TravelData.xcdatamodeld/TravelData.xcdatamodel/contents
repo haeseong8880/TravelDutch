@@ -6,7 +6,13 @@
         <attribute name="latitude" optional="YES" attributeType="Double" defaultValueString="0.0" usesScalarValueType="YES"/>
         <attribute name="longitude" optional="YES" attributeType="Double" defaultValueString="0.0" usesScalarValueType="YES"/>
     </entity>
+    <entity name="MemberMoney" representedClassName="MemberMoney" syncable="YES" codeGenerationType="class">
+        <attribute name="getMoney" optional="YES" attributeType="Integer 64" defaultValueString="0" usesScalarValueType="YES"/>
+        <attribute name="id" optional="YES" attributeType="Integer 64" defaultValueString="0" usesScalarValueType="YES"/>
+        <attribute name="memberName" optional="YES" attributeType="String"/>
+    </entity>
     <elements>
         <element name="Destination" positionX="-63" positionY="-18" width="128" height="103"/>
+        <element name="MemberMoney" positionX="115.0234375" positionY="-19.4609375" width="128" height="74"/>
     </elements>
 </model>

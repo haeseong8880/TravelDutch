@@ -37,7 +37,7 @@ class TravelMapViewController: UIViewController, MKMapViewDelegate {
         $0.addTarget(self, action: #selector(openKakaoPost), for: .touchUpInside)
     }
     
-    private let deleteSaveDestinationButton = UIButton().then {
+    private let changeDestinationButton = UIButton().then {
         $0.setTitle("주소 변경", for: .normal)
         $0.titleLabel?.font = .systemFont(ofSize: 18, weight: .bold)
         $0.setTitleColor(.white, for: .normal)
@@ -60,8 +60,9 @@ class TravelMapViewController: UIViewController, MKMapViewDelegate {
     // MARK: - Action
     @objc private func changeAddress() {
         DestinationManager.shared.deleteDestination(id: 0) { result in
-            print(result)
-            print("click")
+            if result {
+                self.firstDataLoad()
+            }
         }
     }
     
@@ -119,13 +120,13 @@ class TravelMapViewController: UIViewController, MKMapViewDelegate {
                 self.copyButtton.isHidden = true
                 self.destinationLabel.isHidden = true
                 self.destinationSearchButton.isHidden = false
-                self.deleteSaveDestinationButton.isHidden = true
+                self.changeDestinationButton.isHidden = true
                 self.copyButtton.isHidden = true
             } else {
                 self.copyButtton.isHidden = false
                 self.destinationLabel.isHidden = false
                 self.destinationSearchButton.isHidden = true
-                self.deleteSaveDestinationButton.isHidden = false
+                self.changeDestinationButton.isHidden = false
                 self.copyButtton.isHidden = false
                 self.destinationLabel.text = firstCoreData.first?.destination_ko
                 self.setAnnotation(latitudeValue: firstCoreData.first!.latitude, longitudeValue: firstCoreData.first!.longitude, delta: 0.005, title: "목적지", subtitle: "목적지")
@@ -135,7 +136,7 @@ class TravelMapViewController: UIViewController, MKMapViewDelegate {
     
     // MARK: - layout
     private func layout() {
-        [ deleteSaveDestinationButton, copyButtton, destLabel, destinationLabel, destinationSearchButton, mapView ].forEach { view.addSubview($0) }
+        [ changeDestinationButton, copyButtton, destLabel, destinationLabel, destinationSearchButton, mapView ].forEach { view.addSubview($0) }
         
         destLabel.snp.makeConstraints {
             $0.top.equalTo(view.safeAreaLayoutGuide)
@@ -156,7 +157,7 @@ class TravelMapViewController: UIViewController, MKMapViewDelegate {
             $0.width.equalTo(150)
         }
         
-        deleteSaveDestinationButton.snp.makeConstraints {
+        changeDestinationButton.snp.makeConstraints {
             $0.top.equalTo(destLabel.snp.bottom).offset(5)
             $0.trailing.equalTo(copyButtton.snp.leading).inset(-20)
             $0.height.equalTo(30)
@@ -171,7 +172,7 @@ class TravelMapViewController: UIViewController, MKMapViewDelegate {
         }
         
         mapView.snp.makeConstraints {
-            $0.top.equalTo(deleteSaveDestinationButton.snp.bottom).offset(10)
+            $0.top.equalTo(changeDestinationButton.snp.bottom).offset(10)
             $0.bottom.equalTo(view.safeAreaLayoutGuide)
             $0.leading.trailing.equalToSuperview().inset(5)
         }
@@ -192,6 +193,7 @@ extension TravelMapViewController: sendDataDelegate {
                             self.copyButtton.isHidden = false
                             self.destinationLabel.isHidden = false
                             self.destinationSearchButton.isHidden = true
+                            self.changeDestinationButton.isHidden = false
                             self.destinationLabel.text = address
                         }
                     }

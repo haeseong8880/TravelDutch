@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		310DDB9B280FB54900CF021E /* Member+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 310DDB99280FB54900CF021E /* Member+CoreDataClass.swift */; };
+		310DDB9C280FB54900CF021E /* Member+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 310DDB9A280FB54900CF021E /* Member+CoreDataProperties.swift */; };
+		310DDB9F280FB58000CF021E /* MemberManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 310DDB9E280FB58000CF021E /* MemberManager.swift */; };
 		31257DE928099B8600F81BD7 /* MoneyManageEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31257DE828099B8600F81BD7 /* MoneyManageEntity.swift */; };
 		312669B42809484500DB1110 /* MoneyManageTableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 312669B32809484500DB1110 /* MoneyManageTableView.swift */; };
 		312669B62809485700DB1110 /* MoneyManageTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 312669B52809485700DB1110 /* MoneyManageTableViewCell.swift */; };
@@ -43,6 +46,9 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		310DDB99280FB54900CF021E /* Member+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Member+CoreDataClass.swift"; sourceTree = "<group>"; };
+		310DDB9A280FB54900CF021E /* Member+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Member+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		310DDB9E280FB58000CF021E /* MemberManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MemberManager.swift; sourceTree = "<group>"; };
 		31257DE828099B8600F81BD7 /* MoneyManageEntity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MoneyManageEntity.swift; sourceTree = "<group>"; };
 		312669B32809484500DB1110 /* MoneyManageTableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MoneyManageTableView.swift; sourceTree = "<group>"; };
 		312669B52809485700DB1110 /* MoneyManageTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MoneyManageTableViewCell.swift; sourceTree = "<group>"; };
@@ -91,6 +97,16 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		310DDB9D280FB56000CF021E /* MemberCoreData */ = {
+			isa = PBXGroup;
+			children = (
+				310DDB9E280FB58000CF021E /* MemberManager.swift */,
+				310DDB99280FB54900CF021E /* Member+CoreDataClass.swift */,
+				310DDB9A280FB54900CF021E /* Member+CoreDataProperties.swift */,
+			);
+			path = MemberCoreData;
+			sourceTree = "<group>";
+		};
 		312669B2280947DC00DB1110 /* MoneyManage */ = {
 			isa = PBXGroup;
 			children = (
@@ -113,6 +129,7 @@
 			isa = PBXGroup;
 			children = (
 				319132E2280E735E003C14D0 /* DestinationCoreData */,
+				310DDB9D280FB56000CF021E /* MemberCoreData */,
 				319132CD280C3723003C14D0 /* TravelData.xcdatamodeld */,
 			);
 			path = CoreData;
@@ -343,9 +360,11 @@
 				319132CF280C3723003C14D0 /* TravelData.xcdatamodeld in Sources */,
 				312669B42809484500DB1110 /* MoneyManageTableView.swift in Sources */,
 				319132DF280E7247003C14D0 /* DestinationCoreDataClass.swift in Sources */,
+				310DDB9F280FB58000CF021E /* MemberManager.swift in Sources */,
 				317D43652803ED5A00DC209F /* MemberEntity.swift in Sources */,
 				31D161FD2801C2CA00454BF0 /* SceneDelegate.swift in Sources */,
 				31D16239280308A800454BF0 /* PersonTableViewCell.swift in Sources */,
+				310DDB9C280FB54900CF021E /* Member+CoreDataProperties.swift in Sources */,
 				31257DE928099B8600F81BD7 /* MoneyManageEntity.swift in Sources */,
 				319132D4280C3F6E003C14D0 /* KakaoZipCodeVC.swift in Sources */,
 				317D436B2804775200DC209F /* PieCharView.swift in Sources */,
@@ -360,6 +379,7 @@
 				31D162372803087200454BF0 /* PersonTableView.swift in Sources */,
 				31D1621F2801C37C00454BF0 /* ReportViewController.swift in Sources */,
 				31D1622A2801C3BB00454BF0 /* MettingTableViewCell.swift in Sources */,
+				310DDB9B280FB54900CF021E /* Member+CoreDataClass.swift in Sources */,
 				319132E0280E7247003C14D0 /* DestinationCoreDataProperties.swift in Sources */,
 				317D43632803E40500DC209F /* MoneyManageViewController.swift in Sources */,
 				312669B62809485700DB1110 /* MoneyManageTableViewCell.swift in Sources */,

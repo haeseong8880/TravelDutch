@@ -29,9 +29,10 @@ class PersonTableView: UITableView {
     }
     
     func tableReload(member: MemberEntity){
-        // 추후 변경 예정
         memberList.append(member)
-        self.reloadData()
+        DispatchQueue.main.async {
+            self.reloadData()
+        }
     }
     
     func alertForSafeDeletion(indexPath: IndexPath) {
@@ -50,7 +51,7 @@ class PersonTableView: UITableView {
     func popup(titleText: String, placeholderText: String, index: Int, type: ActionStyle) {
         let alert = UIAlertController(title: titleText,message: nil, preferredStyle: .alert)
         alert.addAction(UIAlertAction(title: "취소", style: .cancel, handler: nil))
-
+        
         alert.addTextField { (textField) in
             textField.placeholder = placeholderText
             if type == .money { textField.keyboardType = .numberPad }
@@ -96,8 +97,15 @@ extension PersonTableView: UITableViewDelegate, UITableViewDataSource {
             completionHandler(true)
         }
         let deleteAction = UIContextualAction(style: .normal, title: "삭제") { (action, view, completionHandler) in
-            self.alertForSafeDeletion(indexPath: indexPath)
-            completionHandler(true)
+            DispatchQueue.main.async { [weak self] in
+                guard let self = self else { return }
+                MemberMoneyManager.shared.deleteMemberMoney(id: Int64(indexPath.row)) { result in
+                    if result {
+                        self.alertForSafeDeletion(indexPath: indexPath)
+                        completionHandler(true)
+                    }
+                }
+            }
         }
         
         nameEdting.backgroundColor = .systemBlue
