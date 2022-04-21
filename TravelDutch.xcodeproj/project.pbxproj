@@ -7,8 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		310DDB9B280FB54900CF021E /* Member+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 310DDB99280FB54900CF021E /* Member+CoreDataClass.swift */; };
-		310DDB9C280FB54900CF021E /* Member+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 310DDB9A280FB54900CF021E /* Member+CoreDataProperties.swift */; };
 		310DDB9F280FB58000CF021E /* MemberManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 310DDB9E280FB58000CF021E /* MemberManager.swift */; };
 		31257DE928099B8600F81BD7 /* MoneyManageEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31257DE828099B8600F81BD7 /* MoneyManageEntity.swift */; };
 		312669B42809484500DB1110 /* MoneyManageTableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 312669B32809484500DB1110 /* MoneyManageTableView.swift */; };
@@ -27,6 +25,11 @@
 		319132E0280E7247003C14D0 /* DestinationCoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 319132DE280E7247003C14D0 /* DestinationCoreDataProperties.swift */; };
 		319132E4280E738A003C14D0 /* DestinationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 319132E3280E738A003C14D0 /* DestinationManager.swift */; };
 		319132E8280E8AA5003C14D0 /* SettingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 319132E7280E8AA5003C14D0 /* SettingViewController.swift */; };
+		319F2133281112B900A18657 /* MembersMoney+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 319F2131281112B900A18657 /* MembersMoney+CoreDataClass.swift */; };
+		319F2134281112B900A18657 /* MembersMoney+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 319F2132281112B900A18657 /* MembersMoney+CoreDataProperties.swift */; };
+		319F213828111B4200A18657 /* MoneyManaged+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 319F213628111B4200A18657 /* MoneyManaged+CoreDataClass.swift */; };
+		319F213928111B4200A18657 /* MoneyManaged+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 319F213728111B4200A18657 /* MoneyManaged+CoreDataProperties.swift */; };
+		319F213B28111B8100A18657 /* MoneyManagedManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 319F213A28111B8100A18657 /* MoneyManagedManager.swift */; };
 		31D161FB2801C2CA00454BF0 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31D161FA2801C2CA00454BF0 /* AppDelegate.swift */; };
 		31D161FD2801C2CA00454BF0 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31D161FC2801C2CA00454BF0 /* SceneDelegate.swift */; };
 		31D162022801C2CA00454BF0 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 31D162002801C2CA00454BF0 /* Main.storyboard */; };
@@ -34,20 +37,15 @@
 		31D162072801C2CB00454BF0 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 31D162052801C2CB00454BF0 /* LaunchScreen.storyboard */; };
 		31D162102801C2E000454BF0 /* Then in Frameworks */ = {isa = PBXBuildFile; productRef = 31D1620F2801C2E000454BF0 /* Then */; };
 		31D162132801C2EA00454BF0 /* SnapKit in Frameworks */ = {isa = PBXBuildFile; productRef = 31D162122801C2EA00454BF0 /* SnapKit */; };
-		31D1621D2801C37200454BF0 /* MettingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31D1621C2801C37200454BF0 /* MettingViewController.swift */; };
 		31D1621F2801C37C00454BF0 /* ReportViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31D1621E2801C37C00454BF0 /* ReportViewController.swift */; };
 		31D162212801C38700454BF0 /* PersonViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31D162202801C38700454BF0 /* PersonViewController.swift */; };
 		31D162232801C39200454BF0 /* TravelMapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31D162222801C39200454BF0 /* TravelMapViewController.swift */; };
 		31D162252801C39D00454BF0 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31D162242801C39D00454BF0 /* ViewController.swift */; };
-		31D162282801C3B200454BF0 /* MettingTableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31D162272801C3B200454BF0 /* MettingTableView.swift */; };
-		31D1622A2801C3BB00454BF0 /* MettingTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31D162292801C3BB00454BF0 /* MettingTableViewCell.swift */; };
 		31D162372803087200454BF0 /* PersonTableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31D162362803087200454BF0 /* PersonTableView.swift */; };
 		31D16239280308A800454BF0 /* PersonTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31D16238280308A800454BF0 /* PersonTableViewCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		310DDB99280FB54900CF021E /* Member+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Member+CoreDataClass.swift"; sourceTree = "<group>"; };
-		310DDB9A280FB54900CF021E /* Member+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Member+CoreDataProperties.swift"; sourceTree = "<group>"; };
 		310DDB9E280FB58000CF021E /* MemberManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MemberManager.swift; sourceTree = "<group>"; };
 		31257DE828099B8600F81BD7 /* MoneyManageEntity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MoneyManageEntity.swift; sourceTree = "<group>"; };
 		312669B32809484500DB1110 /* MoneyManageTableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MoneyManageTableView.swift; sourceTree = "<group>"; };
@@ -66,6 +64,11 @@
 		319132DE280E7247003C14D0 /* DestinationCoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DestinationCoreDataProperties.swift; sourceTree = "<group>"; };
 		319132E3280E738A003C14D0 /* DestinationManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DestinationManager.swift; sourceTree = "<group>"; };
 		319132E7280E8AA5003C14D0 /* SettingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingViewController.swift; sourceTree = "<group>"; };
+		319F2131281112B900A18657 /* MembersMoney+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "MembersMoney+CoreDataClass.swift"; sourceTree = "<group>"; };
+		319F2132281112B900A18657 /* MembersMoney+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "MembersMoney+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		319F213628111B4200A18657 /* MoneyManaged+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "MoneyManaged+CoreDataClass.swift"; sourceTree = "<group>"; };
+		319F213728111B4200A18657 /* MoneyManaged+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "MoneyManaged+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		319F213A28111B8100A18657 /* MoneyManagedManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MoneyManagedManager.swift; sourceTree = "<group>"; };
 		31D161F72801C2CA00454BF0 /* TravelDutch.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TravelDutch.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		31D161FA2801C2CA00454BF0 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		31D161FC2801C2CA00454BF0 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -73,13 +76,10 @@
 		31D162032801C2CB00454BF0 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		31D162062801C2CB00454BF0 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		31D162082801C2CB00454BF0 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		31D1621C2801C37200454BF0 /* MettingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MettingViewController.swift; sourceTree = "<group>"; };
 		31D1621E2801C37C00454BF0 /* ReportViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReportViewController.swift; sourceTree = "<group>"; };
 		31D162202801C38700454BF0 /* PersonViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersonViewController.swift; sourceTree = "<group>"; };
 		31D162222801C39200454BF0 /* TravelMapViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TravelMapViewController.swift; sourceTree = "<group>"; };
 		31D162242801C39D00454BF0 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
-		31D162272801C3B200454BF0 /* MettingTableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MettingTableView.swift; sourceTree = "<group>"; };
-		31D162292801C3BB00454BF0 /* MettingTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MettingTableViewCell.swift; sourceTree = "<group>"; };
 		31D162362803087200454BF0 /* PersonTableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersonTableView.swift; sourceTree = "<group>"; };
 		31D16238280308A800454BF0 /* PersonTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersonTableViewCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -101,8 +101,8 @@
 			isa = PBXGroup;
 			children = (
 				310DDB9E280FB58000CF021E /* MemberManager.swift */,
-				310DDB99280FB54900CF021E /* Member+CoreDataClass.swift */,
-				310DDB9A280FB54900CF021E /* Member+CoreDataProperties.swift */,
+				319F2131281112B900A18657 /* MembersMoney+CoreDataClass.swift */,
+				319F2132281112B900A18657 /* MembersMoney+CoreDataProperties.swift */,
 			);
 			path = MemberCoreData;
 			sourceTree = "<group>";
@@ -130,6 +130,7 @@
 			children = (
 				319132E2280E735E003C14D0 /* DestinationCoreData */,
 				310DDB9D280FB56000CF021E /* MemberCoreData */,
+				319F213528111B3200A18657 /* MoneysManaged */,
 				319132CD280C3723003C14D0 /* TravelData.xcdatamodeld */,
 			);
 			path = CoreData;
@@ -151,6 +152,16 @@
 				319132DE280E7247003C14D0 /* DestinationCoreDataProperties.swift */,
 			);
 			path = DestinationCoreData;
+			sourceTree = "<group>";
+		};
+		319F213528111B3200A18657 /* MoneysManaged */ = {
+			isa = PBXGroup;
+			children = (
+				319F213A28111B8100A18657 /* MoneyManagedManager.swift */,
+				319F213628111B4200A18657 /* MoneyManaged+CoreDataClass.swift */,
+				319F213728111B4200A18657 /* MoneyManaged+CoreDataProperties.swift */,
+			);
+			path = MoneysManaged;
 			sourceTree = "<group>";
 		};
 		31D161EE2801C2CA00454BF0 = {
@@ -247,7 +258,6 @@
 				319132D2280C3F60003C14D0 /* KakaoPost */,
 				317D436128030AC100DC209F /* PersonTable */,
 				312669B2280947DC00DB1110 /* MoneyManage */,
-				31D162262801C3A400454BF0 /* MettingTable */,
 			);
 			path = Component;
 			sourceTree = "<group>";
@@ -261,18 +271,8 @@
 				317D43622803E40500DC209F /* MoneyManageViewController.swift */,
 				31D1621E2801C37C00454BF0 /* ReportViewController.swift */,
 				319132E7280E8AA5003C14D0 /* SettingViewController.swift */,
-				31D1621C2801C37200454BF0 /* MettingViewController.swift */,
 			);
 			path = Core;
-			sourceTree = "<group>";
-		};
-		31D162262801C3A400454BF0 /* MettingTable */ = {
-			isa = PBXGroup;
-			children = (
-				31D162272801C3B200454BF0 /* MettingTableView.swift */,
-				31D162292801C3BB00454BF0 /* MettingTableViewCell.swift */,
-			);
-			path = MettingTable;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -356,30 +356,30 @@
 			files = (
 				31D162212801C38700454BF0 /* PersonViewController.swift in Sources */,
 				31D161FB2801C2CA00454BF0 /* AppDelegate.swift in Sources */,
-				31D1621D2801C37200454BF0 /* MettingViewController.swift in Sources */,
+				319F213B28111B8100A18657 /* MoneyManagedManager.swift in Sources */,
 				319132CF280C3723003C14D0 /* TravelData.xcdatamodeld in Sources */,
 				312669B42809484500DB1110 /* MoneyManageTableView.swift in Sources */,
 				319132DF280E7247003C14D0 /* DestinationCoreDataClass.swift in Sources */,
+				319F2133281112B900A18657 /* MembersMoney+CoreDataClass.swift in Sources */,
 				310DDB9F280FB58000CF021E /* MemberManager.swift in Sources */,
+				319F213828111B4200A18657 /* MoneyManaged+CoreDataClass.swift in Sources */,
 				317D43652803ED5A00DC209F /* MemberEntity.swift in Sources */,
 				31D161FD2801C2CA00454BF0 /* SceneDelegate.swift in Sources */,
 				31D16239280308A800454BF0 /* PersonTableViewCell.swift in Sources */,
-				310DDB9C280FB54900CF021E /* Member+CoreDataProperties.swift in Sources */,
 				31257DE928099B8600F81BD7 /* MoneyManageEntity.swift in Sources */,
 				319132D4280C3F6E003C14D0 /* KakaoZipCodeVC.swift in Sources */,
 				317D436B2804775200DC209F /* PieCharView.swift in Sources */,
-				31D162282801C3B200454BF0 /* MettingTableView.swift in Sources */,
 				319132D1280C37C2003C14D0 /* DestinationEntity.swift in Sources */,
 				317D436D28081DBA00DC209F /* Extension.swift in Sources */,
 				319132D6280D01F7003C14D0 /* KakaoMapRepository.swift in Sources */,
+				319F2134281112B900A18657 /* MembersMoney+CoreDataProperties.swift in Sources */,
 				317D4369280449EC00DC209F /* Enum.swift in Sources */,
 				31D162252801C39D00454BF0 /* ViewController.swift in Sources */,
 				319132D8280D059A003C14D0 /* KakaoMapEntity.swift in Sources */,
 				319132E8280E8AA5003C14D0 /* SettingViewController.swift in Sources */,
 				31D162372803087200454BF0 /* PersonTableView.swift in Sources */,
 				31D1621F2801C37C00454BF0 /* ReportViewController.swift in Sources */,
-				31D1622A2801C3BB00454BF0 /* MettingTableViewCell.swift in Sources */,
-				310DDB9B280FB54900CF021E /* Member+CoreDataClass.swift in Sources */,
+				319F213928111B4200A18657 /* MoneyManaged+CoreDataProperties.swift in Sources */,
 				319132E0280E7247003C14D0 /* DestinationCoreDataProperties.swift in Sources */,
 				317D43632803E40500DC209F /* MoneyManageViewController.swift in Sources */,
 				312669B62809485700DB1110 /* MoneyManageTableViewCell.swift in Sources */,

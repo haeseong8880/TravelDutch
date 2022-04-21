@@ -6,6 +6,8 @@
 //
 
 import UIKit
+import Then
+import SnapKit
 
 class PersonTableViewCell: UITableViewCell {
     static let id = "PersonTableViewCell"

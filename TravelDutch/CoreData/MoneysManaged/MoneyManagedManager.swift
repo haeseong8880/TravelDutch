@@ -1,23 +1,23 @@
 //
-//  MemberManager.swift
+//  MoneyManagedManager.swift
 //  TravelDutch
 //
-//  Created by haeseongJung on 2022/04/20.
+//  Created by haeseongJung on 2022/04/21.
 //
 
 import UIKit
 import CoreData
 
-class MemberMoneyManager {
-    static let shared: MemberMoneyManager = MemberMoneyManager()
+class MoneyManagedManager {
+    static let shared: MoneyManagedManager = MoneyManagedManager()
     
     let appDelegate: AppDelegate? = UIApplication.shared.delegate as? AppDelegate
     lazy var context = appDelegate?.persistentContainer.viewContext
     
-    let modelName: String = "MembersMoney"
+    let modelName: String = "MoneysManage"
     
-    func getMemberMoney(ascending: Bool = false) -> [MembersMoney] {
-        var models: [MembersMoney] = [MembersMoney]()
+    func getMemberMoney(ascending: Bool = false) -> [MoneysManaged] {
+        var models: [MoneysManaged] = [MoneysManaged]()
         
         if let context = context {
             let idSort: NSSortDescriptor = NSSortDescriptor(key: "id", ascending: ascending)
@@ -26,7 +26,7 @@ class MemberMoneyManager {
             fetchRequest.sortDescriptors = [idSort]
             
             do {
-                if let fetchResult: [MembersMoney] = try context.fetch(fetchRequest) as? [MembersMoney] {
+                if let fetchResult: [MoneysManaged] = try context.fetch(fetchRequest) as? [MoneysManaged] {
                     models = fetchResult
                 }
             } catch let error as NSError {
@@ -37,14 +37,15 @@ class MemberMoneyManager {
         return models
     }
     
-    func saveMemberMoney(memberName: String, getMoney: Int64, onSuccess: @escaping ((Bool) -> Void)) {
+    func saveMemberMoney(payType: String, whereUseMoney: String, useMoney: String, onSuccess: @escaping ((Bool) -> Void)) {
         if let context = context,
            let entity: NSEntityDescription
             = NSEntityDescription.entity(forEntityName: modelName, in: context) {
             
-            if let req: MembersMoney = NSManagedObject(entity: entity, insertInto: context) as? MembersMoney{
-                req.memberName = memberName
-                req.getMoney = getMoney
+            if let req: MoneysManaged = NSManagedObject(entity: entity, insertInto: context) as? MoneysManaged{
+                req.payType = payType
+                req.whereUseMoney = whereUseMoney
+                req.useMoney = useMoney
                 
                 contextSave { success in
                     onSuccess(success)
@@ -56,7 +57,7 @@ class MemberMoneyManager {
     func deleteMemberMoney(id: Int64, onSuccess: @escaping ((Bool) -> Void)) {
         let fetchRequest: NSFetchRequest<NSFetchRequestResult> = filteredRequest(id: id)
         do {
-            if let results: [MembersMoney] = try context?.fetch(fetchRequest) as? [MembersMoney] {
+            if let results: [MoneysManaged] = try context?.fetch(fetchRequest) as? [MoneysManaged] {
                 if results.count != 0 {
                     context?.delete(results[Int(id)])
                 }
@@ -72,7 +73,7 @@ class MemberMoneyManager {
     }
 }
 
-extension MemberMoneyManager {
+extension MoneyManagedManager {
     fileprivate func filteredRequest(id: Int64) -> NSFetchRequest<NSFetchRequestResult> {
         let fetchRequest: NSFetchRequest<NSFetchRequestResult>
         = NSFetchRequest<NSFetchRequestResult>(entityName: modelName)

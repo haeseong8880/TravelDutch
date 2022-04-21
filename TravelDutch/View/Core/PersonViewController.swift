@@ -78,15 +78,13 @@ class PersonViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        let firstCoreData: [MemberMoney] = MemberMoneyManager.shared.getMemberMoney()
-
+        let firstCoreData: [MembersMoney] = MemberMoneyManager.shared.getMemberMoney()
         if !firstCoreData.isEmpty {
             firstCoreData.forEach { result in
                 print("Object id => \(result.objectID.entity)")
                 self.personTableView.tableReload(member: MemberEntity(name: result.memberName!, money: String(result.getMoney) + "원"))
             }
         }
-        
         configure()
         layout()
     }

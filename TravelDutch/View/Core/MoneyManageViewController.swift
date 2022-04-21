@@ -25,6 +25,7 @@ class MoneyManageViewcontroller: UIViewController {
     
     private let totalLabel = UILabel().then {
         $0.font = .systemFont(ofSize: 22, weight: .bold)
+        $0.textAlignment = .right
     }
     
     private let usedTypeLabel = UILabel().then {
@@ -92,7 +93,17 @@ class MoneyManageViewcontroller: UIViewController {
         pickerConfigure()
         
         // 임시 텍스트
-        totalLabel.text = "40000원"
+        let memberMoneyList: [MembersMoney] = MemberMoneyManager.shared.getMemberMoney()
+        if !memberMoneyList.isEmpty {
+            var totalMoney: Int?
+            memberMoneyList.forEach { result in
+                totalMoney = Int(result.getMoney)
+            }
+            guard let totalMoney = totalMoney else { return }
+            totalLabel.text = "\(totalMoney)원"
+        } else {
+            totalLabel.text = "0원"
+        }
     }
     
     // MARK: - configure
@@ -101,7 +112,6 @@ class MoneyManageViewcontroller: UIViewController {
         self.navigationItem.title = "돈 관리 💵"
         self.navigationItem.largeTitleDisplayMode = .always
         self.navigationController?.navigationBar.prefersLargeTitles = true
-        
     }
     
     
@@ -137,6 +147,7 @@ class MoneyManageViewcontroller: UIViewController {
         totalLabel.snp.makeConstraints {
             $0.top.equalTo(view.safeAreaLayoutGuide).inset(10)
             $0.leading.equalTo(noticeLabel.snp.trailing).inset(10)
+            $0.trailing.equalToSuperview().inset(20)
         }
         
         usedTypeLabel.snp.makeConstraints {
@@ -202,7 +213,6 @@ class MoneyManageViewcontroller: UIViewController {
     }
     
     @objc func moneyaddAction() {
-        print("moneyaddAction click")
     }
     
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?){
