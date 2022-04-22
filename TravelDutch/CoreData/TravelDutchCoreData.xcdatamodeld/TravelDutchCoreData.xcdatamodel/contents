@@ -2,19 +2,22 @@
 <model type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="20086" systemVersion="21E258" minimumToolsVersion="Automatic" sourceLanguage="Swift" userDefinedModelVersionIdentifier="">
     <entity name="Destination" representedClassName="Destination" syncable="YES">
         <attribute name="destination_ko" optional="YES" attributeType="String"/>
-        <attribute name="id" optional="YES" attributeType="Integer 64" defaultValueString="0" usesScalarValueType="YES"/>
         <attribute name="latitude" optional="YES" attributeType="Double" defaultValueString="0.0" usesScalarValueType="YES"/>
-        <attribute name="longitude" optional="YES" attributeType="Double" defaultValueString="0.0" usesScalarValueType="YES"/>
+        <attribute name="longtitude" optional="YES" attributeType="Double" defaultValueString="0.0" usesScalarValueType="YES"/>
     </entity>
     <entity name="MembersMoney" representedClassName="MembersMoney" syncable="YES">
         <attribute name="getMoney" optional="YES" attributeType="Integer 64" defaultValueString="0" usesScalarValueType="YES"/>
-        <attribute name="id" optional="YES" attributeType="Integer 64" defaultValueString="0" usesScalarValueType="YES"/>
         <attribute name="memberName" optional="YES" attributeType="String"/>
     </entity>
-    <entity name="MoneysManaged" representedClassName="MoneysManaged" syncable="YES"/>
+    <entity name="MoneyManage" representedClassName="MoneyManage" syncable="YES">
+        <attribute name="moneyHistory" optional="YES" attributeType="String"/>
+        <attribute name="payComment" optional="YES" attributeType="String"/>
+        <attribute name="payType" optional="YES" attributeType="String"/>
+        <attribute name="timeStamp" optional="YES" attributeType="Date" usesScalarValueType="NO"/>
+    </entity>
     <elements>
-        <element name="Destination" positionX="-63" positionY="-18" width="128" height="103"/>
-        <element name="MembersMoney" positionX="115.0234375" positionY="-19.4609375" width="128" height="74"/>
-        <element name="MoneysManaged" positionX="27" positionY="18" width="128" height="29"/>
+        <element name="Destination" positionX="-54" positionY="-9" width="128" height="74"/>
+        <element name="MembersMoney" positionX="-36" positionY="36" width="128" height="59"/>
+        <element name="MoneyManage" positionX="-18" positionY="54" width="128" height="89"/>
     </elements>
 </model>

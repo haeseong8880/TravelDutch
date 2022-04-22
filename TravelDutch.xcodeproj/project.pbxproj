@@ -11,12 +11,14 @@
 		31257DE928099B8600F81BD7 /* MoneyManageEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31257DE828099B8600F81BD7 /* MoneyManageEntity.swift */; };
 		312669B42809484500DB1110 /* MoneyManageTableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 312669B32809484500DB1110 /* MoneyManageTableView.swift */; };
 		312669B62809485700DB1110 /* MoneyManageTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 312669B52809485700DB1110 /* MoneyManageTableViewCell.swift */; };
+		316778A0281262C900E0349C /* TravelDutchCoreData.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 3167789E281262C900E0349C /* TravelDutchCoreData.xcdatamodeld */; };
+		316778A3281264F900E0349C /* MoneyManage+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 316778A1281264F900E0349C /* MoneyManage+CoreDataClass.swift */; };
+		316778A4281264F900E0349C /* MoneyManage+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 316778A2281264F900E0349C /* MoneyManage+CoreDataProperties.swift */; };
 		317D43632803E40500DC209F /* MoneyManageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 317D43622803E40500DC209F /* MoneyManageViewController.swift */; };
 		317D43652803ED5A00DC209F /* MemberEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 317D43642803ED5A00DC209F /* MemberEntity.swift */; };
 		317D4369280449EC00DC209F /* Enum.swift in Sources */ = {isa = PBXBuildFile; fileRef = 317D4368280449EC00DC209F /* Enum.swift */; };
 		317D436B2804775200DC209F /* PieCharView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 317D436A2804775200DC209F /* PieCharView.swift */; };
 		317D436D28081DBA00DC209F /* Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 317D436C28081DBA00DC209F /* Extension.swift */; };
-		319132CF280C3723003C14D0 /* TravelData.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 319132CD280C3723003C14D0 /* TravelData.xcdatamodeld */; };
 		319132D1280C37C2003C14D0 /* DestinationEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 319132D0280C37C2003C14D0 /* DestinationEntity.swift */; };
 		319132D4280C3F6E003C14D0 /* KakaoZipCodeVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 319132D3280C3F6E003C14D0 /* KakaoZipCodeVC.swift */; };
 		319132D6280D01F7003C14D0 /* KakaoMapRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 319132D5280D01F7003C14D0 /* KakaoMapRepository.swift */; };
@@ -27,8 +29,6 @@
 		319132E8280E8AA5003C14D0 /* SettingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 319132E7280E8AA5003C14D0 /* SettingViewController.swift */; };
 		319F2133281112B900A18657 /* MembersMoney+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 319F2131281112B900A18657 /* MembersMoney+CoreDataClass.swift */; };
 		319F2134281112B900A18657 /* MembersMoney+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 319F2132281112B900A18657 /* MembersMoney+CoreDataProperties.swift */; };
-		319F213828111B4200A18657 /* MoneyManaged+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 319F213628111B4200A18657 /* MoneyManaged+CoreDataClass.swift */; };
-		319F213928111B4200A18657 /* MoneyManaged+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 319F213728111B4200A18657 /* MoneyManaged+CoreDataProperties.swift */; };
 		319F213B28111B8100A18657 /* MoneyManagedManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 319F213A28111B8100A18657 /* MoneyManagedManager.swift */; };
 		31D161FB2801C2CA00454BF0 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31D161FA2801C2CA00454BF0 /* AppDelegate.swift */; };
 		31D161FD2801C2CA00454BF0 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31D161FC2801C2CA00454BF0 /* SceneDelegate.swift */; };
@@ -50,12 +50,14 @@
 		31257DE828099B8600F81BD7 /* MoneyManageEntity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MoneyManageEntity.swift; sourceTree = "<group>"; };
 		312669B32809484500DB1110 /* MoneyManageTableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MoneyManageTableView.swift; sourceTree = "<group>"; };
 		312669B52809485700DB1110 /* MoneyManageTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MoneyManageTableViewCell.swift; sourceTree = "<group>"; };
+		3167789F281262C900E0349C /* TravelDutchCoreData.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = TravelDutchCoreData.xcdatamodel; sourceTree = "<group>"; };
+		316778A1281264F900E0349C /* MoneyManage+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "MoneyManage+CoreDataClass.swift"; sourceTree = "<group>"; };
+		316778A2281264F900E0349C /* MoneyManage+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "MoneyManage+CoreDataProperties.swift"; sourceTree = "<group>"; };
 		317D43622803E40500DC209F /* MoneyManageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MoneyManageViewController.swift; sourceTree = "<group>"; };
 		317D43642803ED5A00DC209F /* MemberEntity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MemberEntity.swift; sourceTree = "<group>"; };
 		317D4368280449EC00DC209F /* Enum.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Enum.swift; sourceTree = "<group>"; };
 		317D436A2804775200DC209F /* PieCharView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PieCharView.swift; sourceTree = "<group>"; };
 		317D436C28081DBA00DC209F /* Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extension.swift; sourceTree = "<group>"; };
-		319132CE280C3723003C14D0 /* TravelData.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = TravelData.xcdatamodel; sourceTree = "<group>"; };
 		319132D0280C37C2003C14D0 /* DestinationEntity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DestinationEntity.swift; sourceTree = "<group>"; };
 		319132D3280C3F6E003C14D0 /* KakaoZipCodeVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KakaoZipCodeVC.swift; sourceTree = "<group>"; };
 		319132D5280D01F7003C14D0 /* KakaoMapRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KakaoMapRepository.swift; sourceTree = "<group>"; };
@@ -66,8 +68,6 @@
 		319132E7280E8AA5003C14D0 /* SettingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingViewController.swift; sourceTree = "<group>"; };
 		319F2131281112B900A18657 /* MembersMoney+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "MembersMoney+CoreDataClass.swift"; sourceTree = "<group>"; };
 		319F2132281112B900A18657 /* MembersMoney+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "MembersMoney+CoreDataProperties.swift"; sourceTree = "<group>"; };
-		319F213628111B4200A18657 /* MoneyManaged+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "MoneyManaged+CoreDataClass.swift"; sourceTree = "<group>"; };
-		319F213728111B4200A18657 /* MoneyManaged+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "MoneyManaged+CoreDataProperties.swift"; sourceTree = "<group>"; };
 		319F213A28111B8100A18657 /* MoneyManagedManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MoneyManagedManager.swift; sourceTree = "<group>"; };
 		31D161F72801C2CA00454BF0 /* TravelDutch.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TravelDutch.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		31D161FA2801C2CA00454BF0 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -128,10 +128,10 @@
 		319132CC280C36FF003C14D0 /* CoreData */ = {
 			isa = PBXGroup;
 			children = (
+				3167789E281262C900E0349C /* TravelDutchCoreData.xcdatamodeld */,
 				319132E2280E735E003C14D0 /* DestinationCoreData */,
 				310DDB9D280FB56000CF021E /* MemberCoreData */,
 				319F213528111B3200A18657 /* MoneysManaged */,
-				319132CD280C3723003C14D0 /* TravelData.xcdatamodeld */,
 			);
 			path = CoreData;
 			sourceTree = "<group>";
@@ -158,8 +158,8 @@
 			isa = PBXGroup;
 			children = (
 				319F213A28111B8100A18657 /* MoneyManagedManager.swift */,
-				319F213628111B4200A18657 /* MoneyManaged+CoreDataClass.swift */,
-				319F213728111B4200A18657 /* MoneyManaged+CoreDataProperties.swift */,
+				316778A1281264F900E0349C /* MoneyManage+CoreDataClass.swift */,
+				316778A2281264F900E0349C /* MoneyManage+CoreDataProperties.swift */,
 			);
 			path = MoneysManaged;
 			sourceTree = "<group>";
@@ -356,13 +356,13 @@
 			files = (
 				31D162212801C38700454BF0 /* PersonViewController.swift in Sources */,
 				31D161FB2801C2CA00454BF0 /* AppDelegate.swift in Sources */,
+				316778A0281262C900E0349C /* TravelDutchCoreData.xcdatamodeld in Sources */,
 				319F213B28111B8100A18657 /* MoneyManagedManager.swift in Sources */,
-				319132CF280C3723003C14D0 /* TravelData.xcdatamodeld in Sources */,
 				312669B42809484500DB1110 /* MoneyManageTableView.swift in Sources */,
 				319132DF280E7247003C14D0 /* DestinationCoreDataClass.swift in Sources */,
 				319F2133281112B900A18657 /* MembersMoney+CoreDataClass.swift in Sources */,
 				310DDB9F280FB58000CF021E /* MemberManager.swift in Sources */,
-				319F213828111B4200A18657 /* MoneyManaged+CoreDataClass.swift in Sources */,
+				316778A4281264F900E0349C /* MoneyManage+CoreDataProperties.swift in Sources */,
 				317D43652803ED5A00DC209F /* MemberEntity.swift in Sources */,
 				31D161FD2801C2CA00454BF0 /* SceneDelegate.swift in Sources */,
 				31D16239280308A800454BF0 /* PersonTableViewCell.swift in Sources */,
@@ -379,8 +379,8 @@
 				319132E8280E8AA5003C14D0 /* SettingViewController.swift in Sources */,
 				31D162372803087200454BF0 /* PersonTableView.swift in Sources */,
 				31D1621F2801C37C00454BF0 /* ReportViewController.swift in Sources */,
-				319F213928111B4200A18657 /* MoneyManaged+CoreDataProperties.swift in Sources */,
 				319132E0280E7247003C14D0 /* DestinationCoreDataProperties.swift in Sources */,
+				316778A3281264F900E0349C /* MoneyManage+CoreDataClass.swift in Sources */,
 				317D43632803E40500DC209F /* MoneyManageViewController.swift in Sources */,
 				312669B62809485700DB1110 /* MoneyManageTableViewCell.swift in Sources */,
 				319132E4280E738A003C14D0 /* DestinationManager.swift in Sources */,
@@ -636,13 +636,13 @@
 /* End XCSwiftPackageProductDependency section */
 
 /* Begin XCVersionGroup section */
-		319132CD280C3723003C14D0 /* TravelData.xcdatamodeld */ = {
+		3167789E281262C900E0349C /* TravelDutchCoreData.xcdatamodeld */ = {
 			isa = XCVersionGroup;
 			children = (
-				319132CE280C3723003C14D0 /* TravelData.xcdatamodel */,
+				3167789F281262C900E0349C /* TravelDutchCoreData.xcdatamodel */,
 			);
-			currentVersion = 319132CE280C3723003C14D0 /* TravelData.xcdatamodel */;
-			path = TravelData.xcdatamodeld;
+			currentVersion = 3167789F281262C900E0349C /* TravelDutchCoreData.xcdatamodel */;
+			path = TravelDutchCoreData.xcdatamodeld;
 			sourceTree = "<group>";
 			versionGroupType = wrapper.xcdatamodel;
 		};

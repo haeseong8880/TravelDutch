@@ -8,86 +8,57 @@
 import UIKit
 import CoreData
 
-class MoneyManagedManager {
-    static let shared: MoneyManagedManager = MoneyManagedManager()
+class MoneyManageManager {
+    static let shared: MoneyManageManager = MoneyManageManager()
+
+    lazy var context = (UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext
     
-    let appDelegate: AppDelegate? = UIApplication.shared.delegate as? AppDelegate
-    lazy var context = appDelegate?.persistentContainer.viewContext
-    
-    let modelName: String = "MoneysManage"
-    
-    func getMemberMoney(ascending: Bool = false) -> [MoneysManaged] {
-        var models: [MoneysManaged] = [MoneysManaged]()
-        
-        if let context = context {
-            let idSort: NSSortDescriptor = NSSortDescriptor(key: "id", ascending: ascending)
-            let fetchRequest: NSFetchRequest<NSManagedObject>
-            = NSFetchRequest<NSManagedObject>(entityName: modelName)
-            fetchRequest.sortDescriptors = [idSort]
-            
-            do {
-                if let fetchResult: [MoneysManaged] = try context.fetch(fetchRequest) as? [MoneysManaged] {
-                    models = fetchResult
-                }
-            } catch let error as NSError {
-                print("Could not fetch🥺: \(error), \(error.userInfo)")
+    func getAllMoneyManage() -> [MoneyManage] {
+        var models: [MoneyManage] = [MoneyManage]()
+        do {
+            if let result = try context.fetch(MoneyManage.fetchRequest()) {
+                models = result
             }
         }
-        print("MemberMoney Get => \(models)")
+        catch {
+            print("getAllItems Error => \(error.localizedDescription)")
+        }
         return models
     }
     
-    func saveMemberMoney(payType: String, whereUseMoney: String, useMoney: String, onSuccess: @escaping ((Bool) -> Void)) {
-        if let context = context,
-           let entity: NSEntityDescription
-            = NSEntityDescription.entity(forEntityName: modelName, in: context) {
-            
-            if let req: MoneysManaged = NSManagedObject(entity: entity, insertInto: context) as? MoneysManaged{
-                req.payType = payType
-                req.whereUseMoney = whereUseMoney
-                req.useMoney = useMoney
-                
-                contextSave { success in
-                    onSuccess(success)
-                }
-            }
-        }
-    }
-    
-    func deleteMemberMoney(id: Int64, onSuccess: @escaping ((Bool) -> Void)) {
-        let fetchRequest: NSFetchRequest<NSFetchRequestResult> = filteredRequest(id: id)
-        do {
-            if let results: [MoneysManaged] = try context?.fetch(fetchRequest) as? [MoneysManaged] {
-                if results.count != 0 {
-                    context?.delete(results[Int(id)])
-                }
-            }
-        } catch let error as NSError {
-            print("Could not fatch🥺: \(error), \(error.userInfo)")
-            onSuccess(false)
-        }
-        
-        contextSave { success in
-            onSuccess(success)
-        }
-    }
-}
-
-extension MoneyManagedManager {
-    fileprivate func filteredRequest(id: Int64) -> NSFetchRequest<NSFetchRequestResult> {
-        let fetchRequest: NSFetchRequest<NSFetchRequestResult>
-        = NSFetchRequest<NSFetchRequestResult>(entityName: modelName)
-        fetchRequest.predicate = NSPredicate(format: "id = %@", NSNumber(value: id))
-        return fetchRequest
-    }
-    
-    fileprivate func contextSave(onSuccess: ((Bool) -> Void)) {
+    func createItem(timeStamp: Date, payComment: String, payType: String, moneyHistory: String) -> Bool {
+        let insertItem = MoneyManage(context: context)
+        insertItem.timeStamp = timeStamp
+        insertItem.payComment = payComment
+        insertItem.payType = payType
+        insertItem.moneyHistory = moneyHistory
         do {
             try context?.save()
-            onSuccess(true)
-        } catch let error as NSError {
-            print("Could not save🥶: \(error), \(error.userInfo)")
-            onSuccess(false)
+            return true
+        }
+        catch {
+            print("createItem Error => \(error.localizedDescription)")
+            return false
         }
     }
+    
+//    func deleteItem(item: MembersMoney) {
+//        context?.delete(item)
+//        do {
+//            try context?.save()
+//        }
+//        catch {
+//
+//        }
+//    }
+    
+//    func updateItem(item: MembersMoney, name: String) {
+//        item.memberName = name
+//        do {
+//            try context?.save()
+//        }
+//        catch {
+//
+//        }
+//    }
 }

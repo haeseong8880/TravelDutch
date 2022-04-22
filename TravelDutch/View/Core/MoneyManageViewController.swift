@@ -87,12 +87,12 @@ class MoneyManageViewcontroller: UIViewController {
     // MARK: - LifeCycle
     override func viewDidLoad() {
         super.viewDidLoad()
+
         
         configure()
         layout()
         pickerConfigure()
         
-        // 임시 텍스트
         let memberMoneyList: [MembersMoney] = MemberMoneyManager.shared.getMemberMoney()
         if !memberMoneyList.isEmpty {
             var totalMoney: Int?
@@ -213,6 +213,8 @@ class MoneyManageViewcontroller: UIViewController {
     }
     
     @objc func moneyaddAction() {
+        let result: Bool = MoneyManageManager.shared.createItem(timeStamp: Date.now, payComment: usedCommentTextField.text!, payType: usedTypeTextField.text!, moneyHistory: usedMoneyTextField.text!)
+        print("create Item result => \(result)")
     }
     
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?){

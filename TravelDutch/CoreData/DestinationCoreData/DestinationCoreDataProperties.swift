@@ -16,7 +16,6 @@ extension Destination {
         return NSFetchRequest<Destination>(entityName: "Destination")
     }
     
-    @NSManaged public var int: Int64
     @NSManaged public var destination_ko: String
     @NSManaged public var latitude: Double
     @NSManaged public var longitude: Double

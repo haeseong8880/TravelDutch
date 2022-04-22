@@ -17,7 +17,6 @@ extension MembersMoney {
     }
 
     @NSManaged public var getMoney: Int64
-    @NSManaged public var id: Int64
     @NSManaged public var memberName: String?
 
 }
