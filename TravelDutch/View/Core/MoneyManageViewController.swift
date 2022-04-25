@@ -213,8 +213,10 @@ class MoneyManageViewcontroller: UIViewController {
     }
     
     @objc func moneyaddAction() {
-        let result: Bool = MoneyManageManager.shared.createItem(timeStamp: Date.now, payComment: usedCommentTextField.text!, payType: usedTypeTextField.text!, moneyHistory: usedMoneyTextField.text!)
-        print("create Item result => \(result)")
+        MoneyManageManager.shared.createItem(payComment: usedCommentTextField.text!, payType: usedTypeTextField.text!, moneyHistory: usedMoneyTextField.text!) { result in
+            print(result)
+        }
+//        print("create Item result => \(result)")
     }
     
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?){

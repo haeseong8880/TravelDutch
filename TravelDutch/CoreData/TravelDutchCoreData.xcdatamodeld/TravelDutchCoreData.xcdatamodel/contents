@@ -13,7 +13,7 @@
         <attribute name="moneyHistory" optional="YES" attributeType="String"/>
         <attribute name="payComment" optional="YES" attributeType="String"/>
         <attribute name="payType" optional="YES" attributeType="String"/>
-        <attribute name="timeStamp" optional="YES" attributeType="Date" usesScalarValueType="NO"/>
+        <attribute name="timeStamp" optional="YES" attributeType="Date" defaultDateTimeInterval="672553200" usesScalarValueType="NO"/>
     </entity>
     <elements>
         <element name="Destination" positionX="-54" positionY="-9" width="128" height="74"/>
