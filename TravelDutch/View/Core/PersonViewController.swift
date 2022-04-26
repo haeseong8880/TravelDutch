@@ -53,17 +53,20 @@ class PersonViewController: UIViewController {
     @objc private func memberAddAction() {
         self.view.endEditing(true)
         // 나중에 필터링 필요
-        
         guard let name = memberTextField.text else { return }
         guard let money = moneyTextField.text else { return }
         if name.isEmpty || money.isEmpty {
             return alert()
         }else {
-            MemberMoneyManager.shared.saveMemberMoney(memberName: name, getMoney: Int64(money)!) { [weak self] result in
-                guard let self = self else { return }
-                self.personTableView.tableReload(member: MemberEntity(name: name, money: money + "원"))
-                self.memberTextField.text = nil
-                self.moneyTextField.text = nil
+            let getMember = Member()
+            getMember.money = money
+            getMember.name = name
+            MemberManager.shared.saveMember(members: getMember) { result in
+                if result {
+                    self.personTableView.tableReload(member: getMember)
+                    self.memberTextField.text = nil
+                    self.moneyTextField.text = nil
+                }
             }
         }
     }
@@ -78,11 +81,14 @@ class PersonViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        let firstCoreData: [MembersMoney] = MemberMoneyManager.shared.getMemberMoney()
-        if !firstCoreData.isEmpty {
-            firstCoreData.forEach { result in
-                print("Object id => \(result.objectID.entity)")
-                self.personTableView.tableReload(member: MemberEntity(name: result.memberName!, money: String(result.getMoney) + "원"))
+        
+        let firstData = MemberManager.shared.getAllMember()
+        if firstData != nil {
+            firstData.forEach { result in
+                let memberSetting = Member()
+                memberSetting.money = result.money + "원"
+                memberSetting.name = result.name
+                self.personTableView.tableReload(member: memberSetting)
             }
         }
         configure()

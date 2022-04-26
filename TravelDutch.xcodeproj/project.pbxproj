@@ -7,13 +7,15 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		310DDB9F280FB58000CF021E /* MemberManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 310DDB9E280FB58000CF021E /* MemberManager.swift */; };
 		31257DE928099B8600F81BD7 /* MoneyManageEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31257DE828099B8600F81BD7 /* MoneyManageEntity.swift */; };
 		312669B42809484500DB1110 /* MoneyManageTableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 312669B32809484500DB1110 /* MoneyManageTableView.swift */; };
 		312669B62809485700DB1110 /* MoneyManageTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 312669B52809485700DB1110 /* MoneyManageTableViewCell.swift */; };
+		3135813028183D990014745D /* MemberModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3135812F28183D990014745D /* MemberModel.swift */; };
+		3135813228183E240014745D /* MemberManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3135813128183E240014745D /* MemberManager.swift */; };
 		316778A0281262C900E0349C /* TravelDutchCoreData.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 3167789E281262C900E0349C /* TravelDutchCoreData.xcdatamodeld */; };
-		316778A3281264F900E0349C /* MoneyManage+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 316778A1281264F900E0349C /* MoneyManage+CoreDataClass.swift */; };
-		316778A4281264F900E0349C /* MoneyManage+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 316778A2281264F900E0349C /* MoneyManage+CoreDataProperties.swift */; };
+		316B8D2A2816DD1A00C8B1F4 /* RealmSwift in Frameworks */ = {isa = PBXBuildFile; productRef = 316B8D292816DD1A00C8B1F4 /* RealmSwift */; };
+		316B8D2D2816DDF500C8B1F4 /* DestinationModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 316B8D2C2816DDF500C8B1F4 /* DestinationModel.swift */; };
+		316B8D2F2816FF7800C8B1F4 /* DestinationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 316B8D2E2816FF7800C8B1F4 /* DestinationManager.swift */; };
 		317D43632803E40500DC209F /* MoneyManageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 317D43622803E40500DC209F /* MoneyManageViewController.swift */; };
 		317D43652803ED5A00DC209F /* MemberEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 317D43642803ED5A00DC209F /* MemberEntity.swift */; };
 		317D4369280449EC00DC209F /* Enum.swift in Sources */ = {isa = PBXBuildFile; fileRef = 317D4368280449EC00DC209F /* Enum.swift */; };
@@ -23,13 +25,7 @@
 		319132D4280C3F6E003C14D0 /* KakaoZipCodeVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 319132D3280C3F6E003C14D0 /* KakaoZipCodeVC.swift */; };
 		319132D6280D01F7003C14D0 /* KakaoMapRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 319132D5280D01F7003C14D0 /* KakaoMapRepository.swift */; };
 		319132D8280D059A003C14D0 /* KakaoMapEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 319132D7280D059A003C14D0 /* KakaoMapEntity.swift */; };
-		319132DF280E7247003C14D0 /* DestinationCoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 319132DD280E7247003C14D0 /* DestinationCoreDataClass.swift */; };
-		319132E0280E7247003C14D0 /* DestinationCoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 319132DE280E7247003C14D0 /* DestinationCoreDataProperties.swift */; };
-		319132E4280E738A003C14D0 /* DestinationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 319132E3280E738A003C14D0 /* DestinationManager.swift */; };
 		319132E8280E8AA5003C14D0 /* SettingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 319132E7280E8AA5003C14D0 /* SettingViewController.swift */; };
-		319F2133281112B900A18657 /* MembersMoney+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 319F2131281112B900A18657 /* MembersMoney+CoreDataClass.swift */; };
-		319F2134281112B900A18657 /* MembersMoney+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 319F2132281112B900A18657 /* MembersMoney+CoreDataProperties.swift */; };
-		319F213B28111B8100A18657 /* MoneyManagedManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 319F213A28111B8100A18657 /* MoneyManagedManager.swift */; };
 		31D161FB2801C2CA00454BF0 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31D161FA2801C2CA00454BF0 /* AppDelegate.swift */; };
 		31D161FD2801C2CA00454BF0 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31D161FC2801C2CA00454BF0 /* SceneDelegate.swift */; };
 		31D162022801C2CA00454BF0 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 31D162002801C2CA00454BF0 /* Main.storyboard */; };
@@ -46,13 +42,14 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		310DDB9E280FB58000CF021E /* MemberManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MemberManager.swift; sourceTree = "<group>"; };
 		31257DE828099B8600F81BD7 /* MoneyManageEntity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MoneyManageEntity.swift; sourceTree = "<group>"; };
 		312669B32809484500DB1110 /* MoneyManageTableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MoneyManageTableView.swift; sourceTree = "<group>"; };
 		312669B52809485700DB1110 /* MoneyManageTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MoneyManageTableViewCell.swift; sourceTree = "<group>"; };
+		3135812F28183D990014745D /* MemberModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MemberModel.swift; sourceTree = "<group>"; };
+		3135813128183E240014745D /* MemberManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MemberManager.swift; sourceTree = "<group>"; };
 		3167789F281262C900E0349C /* TravelDutchCoreData.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = TravelDutchCoreData.xcdatamodel; sourceTree = "<group>"; };
-		316778A1281264F900E0349C /* MoneyManage+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "MoneyManage+CoreDataClass.swift"; sourceTree = "<group>"; };
-		316778A2281264F900E0349C /* MoneyManage+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "MoneyManage+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		316B8D2C2816DDF500C8B1F4 /* DestinationModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DestinationModel.swift; sourceTree = "<group>"; };
+		316B8D2E2816FF7800C8B1F4 /* DestinationManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DestinationManager.swift; sourceTree = "<group>"; };
 		317D43622803E40500DC209F /* MoneyManageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MoneyManageViewController.swift; sourceTree = "<group>"; };
 		317D43642803ED5A00DC209F /* MemberEntity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MemberEntity.swift; sourceTree = "<group>"; };
 		317D4368280449EC00DC209F /* Enum.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Enum.swift; sourceTree = "<group>"; };
@@ -62,13 +59,7 @@
 		319132D3280C3F6E003C14D0 /* KakaoZipCodeVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KakaoZipCodeVC.swift; sourceTree = "<group>"; };
 		319132D5280D01F7003C14D0 /* KakaoMapRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KakaoMapRepository.swift; sourceTree = "<group>"; };
 		319132D7280D059A003C14D0 /* KakaoMapEntity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KakaoMapEntity.swift; sourceTree = "<group>"; };
-		319132DD280E7247003C14D0 /* DestinationCoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DestinationCoreDataClass.swift; sourceTree = "<group>"; };
-		319132DE280E7247003C14D0 /* DestinationCoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DestinationCoreDataProperties.swift; sourceTree = "<group>"; };
-		319132E3280E738A003C14D0 /* DestinationManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DestinationManager.swift; sourceTree = "<group>"; };
 		319132E7280E8AA5003C14D0 /* SettingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingViewController.swift; sourceTree = "<group>"; };
-		319F2131281112B900A18657 /* MembersMoney+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "MembersMoney+CoreDataClass.swift"; sourceTree = "<group>"; };
-		319F2132281112B900A18657 /* MembersMoney+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "MembersMoney+CoreDataProperties.swift"; sourceTree = "<group>"; };
-		319F213A28111B8100A18657 /* MoneyManagedManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MoneyManagedManager.swift; sourceTree = "<group>"; };
 		31D161F72801C2CA00454BF0 /* TravelDutch.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TravelDutch.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		31D161FA2801C2CA00454BF0 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		31D161FC2801C2CA00454BF0 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -89,6 +80,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				316B8D2A2816DD1A00C8B1F4 /* RealmSwift in Frameworks */,
 				31D162102801C2E000454BF0 /* Then in Frameworks */,
 				31D162132801C2EA00454BF0 /* SnapKit in Frameworks */,
 			);
@@ -97,16 +89,6 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		310DDB9D280FB56000CF021E /* MemberCoreData */ = {
-			isa = PBXGroup;
-			children = (
-				310DDB9E280FB58000CF021E /* MemberManager.swift */,
-				319F2131281112B900A18657 /* MembersMoney+CoreDataClass.swift */,
-				319F2132281112B900A18657 /* MembersMoney+CoreDataProperties.swift */,
-			);
-			path = MemberCoreData;
-			sourceTree = "<group>";
-		};
 		312669B2280947DC00DB1110 /* MoneyManage */ = {
 			isa = PBXGroup;
 			children = (
@@ -114,6 +96,33 @@
 				312669B52809485700DB1110 /* MoneyManageTableViewCell.swift */,
 			);
 			path = MoneyManage;
+			sourceTree = "<group>";
+		};
+		3135812D28183D5E0014745D /* Destination */ = {
+			isa = PBXGroup;
+			children = (
+				316B8D2C2816DDF500C8B1F4 /* DestinationModel.swift */,
+				316B8D2E2816FF7800C8B1F4 /* DestinationManager.swift */,
+			);
+			path = Destination;
+			sourceTree = "<group>";
+		};
+		3135812E28183D6B0014745D /* Member */ = {
+			isa = PBXGroup;
+			children = (
+				3135812F28183D990014745D /* MemberModel.swift */,
+				3135813128183E240014745D /* MemberManager.swift */,
+			);
+			path = Member;
+			sourceTree = "<group>";
+		};
+		316B8D2B2816DDC800C8B1F4 /* Realm */ = {
+			isa = PBXGroup;
+			children = (
+				3135812E28183D6B0014745D /* Member */,
+				3135812D28183D5E0014745D /* Destination */,
+			);
+			path = Realm;
 			sourceTree = "<group>";
 		};
 		317D436128030AC100DC209F /* PersonTable */ = {
@@ -129,9 +138,6 @@
 			isa = PBXGroup;
 			children = (
 				3167789E281262C900E0349C /* TravelDutchCoreData.xcdatamodeld */,
-				319132E2280E735E003C14D0 /* DestinationCoreData */,
-				310DDB9D280FB56000CF021E /* MemberCoreData */,
-				319F213528111B3200A18657 /* MoneysManaged */,
 			);
 			path = CoreData;
 			sourceTree = "<group>";
@@ -142,26 +148,6 @@
 				319132D3280C3F6E003C14D0 /* KakaoZipCodeVC.swift */,
 			);
 			path = KakaoPost;
-			sourceTree = "<group>";
-		};
-		319132E2280E735E003C14D0 /* DestinationCoreData */ = {
-			isa = PBXGroup;
-			children = (
-				319132E3280E738A003C14D0 /* DestinationManager.swift */,
-				319132DD280E7247003C14D0 /* DestinationCoreDataClass.swift */,
-				319132DE280E7247003C14D0 /* DestinationCoreDataProperties.swift */,
-			);
-			path = DestinationCoreData;
-			sourceTree = "<group>";
-		};
-		319F213528111B3200A18657 /* MoneysManaged */ = {
-			isa = PBXGroup;
-			children = (
-				319F213A28111B8100A18657 /* MoneyManagedManager.swift */,
-				316778A1281264F900E0349C /* MoneyManage+CoreDataClass.swift */,
-				316778A2281264F900E0349C /* MoneyManage+CoreDataProperties.swift */,
-			);
-			path = MoneysManaged;
 			sourceTree = "<group>";
 		};
 		31D161EE2801C2CA00454BF0 = {
@@ -187,9 +173,9 @@
 				31D162182801C33500454BF0 /* Utility */,
 				31D162172801C33000454BF0 /* Service */,
 				31D162162801C32700454BF0 /* Repository */,
-				31D162152801C32200454BF0 /* Model */,
 				31D162142801C31800454BF0 /* Entity */,
 				319132CC280C36FF003C14D0 /* CoreData */,
+				316B8D2B2816DDC800C8B1F4 /* Realm */,
 				31D161FA2801C2CA00454BF0 /* AppDelegate.swift */,
 				31D161FC2801C2CA00454BF0 /* SceneDelegate.swift */,
 				31D162002801C2CA00454BF0 /* Main.storyboard */,
@@ -209,13 +195,6 @@
 				319132D7280D059A003C14D0 /* KakaoMapEntity.swift */,
 			);
 			path = Entity;
-			sourceTree = "<group>";
-		};
-		31D162152801C32200454BF0 /* Model */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Model;
 			sourceTree = "<group>";
 		};
 		31D162162801C32700454BF0 /* Repository */ = {
@@ -294,6 +273,7 @@
 			packageProductDependencies = (
 				31D1620F2801C2E000454BF0 /* Then */,
 				31D162122801C2EA00454BF0 /* SnapKit */,
+				316B8D292816DD1A00C8B1F4 /* RealmSwift */,
 			);
 			productName = TravelDutch;
 			productReference = 31D161F72801C2CA00454BF0 /* TravelDutch.app */;
@@ -326,6 +306,7 @@
 			packageReferences = (
 				31D1620E2801C2E000454BF0 /* XCRemoteSwiftPackageReference "Then" */,
 				31D162112801C2EA00454BF0 /* XCRemoteSwiftPackageReference "SnapKit" */,
+				316B8D282816DD1A00C8B1F4 /* XCRemoteSwiftPackageReference "realm-swift" */,
 			);
 			productRefGroup = 31D161F82801C2CA00454BF0 /* Products */;
 			projectDirPath = "";
@@ -357,34 +338,29 @@
 				31D162212801C38700454BF0 /* PersonViewController.swift in Sources */,
 				31D161FB2801C2CA00454BF0 /* AppDelegate.swift in Sources */,
 				316778A0281262C900E0349C /* TravelDutchCoreData.xcdatamodeld in Sources */,
-				319F213B28111B8100A18657 /* MoneyManagedManager.swift in Sources */,
+				316B8D2D2816DDF500C8B1F4 /* DestinationModel.swift in Sources */,
 				312669B42809484500DB1110 /* MoneyManageTableView.swift in Sources */,
-				319132DF280E7247003C14D0 /* DestinationCoreDataClass.swift in Sources */,
-				319F2133281112B900A18657 /* MembersMoney+CoreDataClass.swift in Sources */,
-				310DDB9F280FB58000CF021E /* MemberManager.swift in Sources */,
-				316778A4281264F900E0349C /* MoneyManage+CoreDataProperties.swift in Sources */,
 				317D43652803ED5A00DC209F /* MemberEntity.swift in Sources */,
 				31D161FD2801C2CA00454BF0 /* SceneDelegate.swift in Sources */,
 				31D16239280308A800454BF0 /* PersonTableViewCell.swift in Sources */,
 				31257DE928099B8600F81BD7 /* MoneyManageEntity.swift in Sources */,
 				319132D4280C3F6E003C14D0 /* KakaoZipCodeVC.swift in Sources */,
 				317D436B2804775200DC209F /* PieCharView.swift in Sources */,
+				3135813028183D990014745D /* MemberModel.swift in Sources */,
 				319132D1280C37C2003C14D0 /* DestinationEntity.swift in Sources */,
 				317D436D28081DBA00DC209F /* Extension.swift in Sources */,
 				319132D6280D01F7003C14D0 /* KakaoMapRepository.swift in Sources */,
-				319F2134281112B900A18657 /* MembersMoney+CoreDataProperties.swift in Sources */,
 				317D4369280449EC00DC209F /* Enum.swift in Sources */,
 				31D162252801C39D00454BF0 /* ViewController.swift in Sources */,
 				319132D8280D059A003C14D0 /* KakaoMapEntity.swift in Sources */,
 				319132E8280E8AA5003C14D0 /* SettingViewController.swift in Sources */,
 				31D162372803087200454BF0 /* PersonTableView.swift in Sources */,
+				316B8D2F2816FF7800C8B1F4 /* DestinationManager.swift in Sources */,
 				31D1621F2801C37C00454BF0 /* ReportViewController.swift in Sources */,
-				319132E0280E7247003C14D0 /* DestinationCoreDataProperties.swift in Sources */,
-				316778A3281264F900E0349C /* MoneyManage+CoreDataClass.swift in Sources */,
 				317D43632803E40500DC209F /* MoneyManageViewController.swift in Sources */,
 				312669B62809485700DB1110 /* MoneyManageTableViewCell.swift in Sources */,
-				319132E4280E738A003C14D0 /* DestinationManager.swift in Sources */,
 				31D162232801C39200454BF0 /* TravelMapViewController.swift in Sources */,
+				3135813228183E240014745D /* MemberManager.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -604,6 +580,14 @@
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
+		316B8D282816DD1A00C8B1F4 /* XCRemoteSwiftPackageReference "realm-swift" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/realm/realm-swift.git";
+			requirement = {
+				branch = master;
+				kind = branch;
+			};
+		};
 		31D1620E2801C2E000454BF0 /* XCRemoteSwiftPackageReference "Then" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/devxoul/Then";
@@ -623,6 +607,11 @@
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
+		316B8D292816DD1A00C8B1F4 /* RealmSwift */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 316B8D282816DD1A00C8B1F4 /* XCRemoteSwiftPackageReference "realm-swift" */;
+			productName = RealmSwift;
+		};
 		31D1620F2801C2E000454BF0 /* Then */ = {
 			isa = XCSwiftPackageProductDependency;
 			package = 31D1620E2801C2E000454BF0 /* XCRemoteSwiftPackageReference "Then" */;

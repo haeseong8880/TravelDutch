@@ -10,7 +10,7 @@ import UIKit
 class PersonTableView: UITableView {
     
     //MARK: - Properties
-    var memberList: [MemberEntity] = []
+    var memberList: [Member] = []
     
     //MARK: - LifeCycle
     override init(frame: CGRect, style: UITableView.Style) {
@@ -28,9 +28,9 @@ class PersonTableView: UITableView {
         fatalError("init(coder:) has not been implemented")
     }
     
-    func tableReload(member: MemberEntity){
-        memberList.append(member)
+    func tableReload(member: Member){
         DispatchQueue.main.async {
+            self.memberList.append(member)
             self.reloadData()
         }
     }
@@ -60,9 +60,16 @@ class PersonTableView: UITableView {
         alert.addAction(UIAlertAction(title: "수정", style: .default, handler: {[weak self] action in
             guard let self = self else { return }
             if let result = alert.textFields?.first?.text {
-                if type == .name { self.memberList[index].name = result }
+                if type == .name {
+                    MemberManager.shared.updateMember(members: self.memberList[index], newData: result, type: .name) { resultBool in
+                        if resultBool {
+                            self.memberList[index].name = result
+                            self.reloadData()
+                        }
+                    }
+                }
                 else if type == .money { self.memberList[index].money = result + "원" }
-                self.reloadData()
+                
             }
         }))
         self.window?.rootViewController?.present(alert, animated: true)
@@ -99,12 +106,12 @@ extension PersonTableView: UITableViewDelegate, UITableViewDataSource {
         let deleteAction = UIContextualAction(style: .normal, title: "삭제") { (action, view, completionHandler) in
             DispatchQueue.main.async { [weak self] in
                 guard let self = self else { return }
-                MemberMoneyManager.shared.deleteMemberMoney(id: Int64(indexPath.row)) { result in
-                    if result {
-                        self.alertForSafeDeletion(indexPath: indexPath)
-                        completionHandler(true)
-                    }
-                }
+                //                MemberMoneyManager.shared.deleteMemberMoney(id: Int64(indexPath.row)) { result in
+                //                    if result {
+                //                        self.alertForSafeDeletion(indexPath: indexPath)
+                //                        completionHandler(true)
+                //                    }
+                //                }
             }
         }
         

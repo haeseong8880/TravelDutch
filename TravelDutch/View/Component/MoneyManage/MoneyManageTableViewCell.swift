@@ -11,7 +11,7 @@ class MoneyManageTableViewCell: UITableViewCell {
     static let id = "MoneyManageTableViewCell"
     
     // MARK: - Properties
-    var items: MoneyManage = MoneyManage()
+//    var items: MoneyManage = MoneyManage()
     
     private let timeStampLabel = UILabel().then {
         $0.font = .systemFont(ofSize: 15, weight: .medium)
@@ -51,10 +51,10 @@ class MoneyManageTableViewCell: UITableViewCell {
     
     // MARK: - configure
     private func configure() {
-        payTypeLabel.text = items.payType
-        timeStampLabel.text = dateToString(with: (items.timeStamp!))
-        PayCommentLabel.text = items.payComment
-        moneyHistoryLabel.text = items.moneyHistory
+//        payTypeLabel.text = items.payType
+//        timeStampLabel.text = dateToString(with: (items.timeStamp!))
+//        PayCommentLabel.text = items.payComment
+//        moneyHistoryLabel.text = items.moneyHistory
     }
     
     // MARK: - Layout

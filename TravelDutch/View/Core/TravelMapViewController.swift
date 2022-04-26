@@ -7,9 +7,12 @@
 
 import UIKit
 import MapKit
-import WebKit
+//import WebKit
+import RealmSwift
 
 class TravelMapViewController: UIViewController, MKMapViewDelegate {
+    
+    
     
     // MARK: - Properties
     private var mapView: MKMapView = MKMapView()
@@ -59,9 +62,15 @@ class TravelMapViewController: UIViewController, MKMapViewDelegate {
     
     // MARK: - Action
     @objc private func changeAddress() {
-        DestinationManager.shared.deleteDestination(id: 0) { result in
+        DestinationManager.shared.deleteDestination { result in
             if result {
-                self.firstDataLoad()
+                DispatchQueue.main.async {
+                    self.copyButtton.isHidden = true
+                    self.destinationLabel.isHidden = true
+                    self.destinationSearchButton.isHidden = false
+                    self.changeDestinationButton.isHidden = true
+                    self.copyButtton.isHidden = true
+                }
             }
         }
     }
@@ -114,23 +123,24 @@ class TravelMapViewController: UIViewController, MKMapViewDelegate {
     }
     
     private func firstDataLoad() {
-        let firstCoreData: [Destination] = DestinationManager.shared.getDestination()
-        DispatchQueue.main.async {
-            if firstCoreData.isEmpty {
+        guard let firstData = DestinationManager.shared.getDestination() else {
+            DispatchQueue.main.async {
                 self.copyButtton.isHidden = true
                 self.destinationLabel.isHidden = true
                 self.destinationSearchButton.isHidden = false
                 self.changeDestinationButton.isHidden = true
                 self.copyButtton.isHidden = true
-            } else {
-                self.copyButtton.isHidden = false
-                self.destinationLabel.isHidden = false
-                self.destinationSearchButton.isHidden = true
-                self.changeDestinationButton.isHidden = false
-                self.copyButtton.isHidden = false
-                self.destinationLabel.text = firstCoreData.first?.destination_ko
-                self.setAnnotation(latitudeValue: firstCoreData.first!.latitude, longitudeValue: firstCoreData.first!.longitude, delta: 0.005, title: "목적지", subtitle: "목적지")
             }
+            return
+        }
+        DispatchQueue.main.async {
+            self.copyButtton.isHidden = false
+            self.destinationLabel.isHidden = false
+            self.destinationSearchButton.isHidden = true
+            self.changeDestinationButton.isHidden = false
+            self.copyButtton.isHidden = false
+            self.destinationLabel.text = firstData.destination_ko
+            self.setAnnotation(latitudeValue: firstData.latitude, longitudeValue: firstData.longitude, delta: 0.005, title: "목적지", subtitle: "목적지")
         }
     }
     
@@ -187,18 +197,23 @@ extension TravelMapViewController: sendDataDelegate {
             case let .success(result):
                 guard let latitude = Double(result.documents.first!.y), let longitude = Double(result.documents.first!.x) else { return }
                 self.setAnnotation(latitudeValue: latitude, longitudeValue: longitude, delta: 0.005, title: "목적지", subtitle: "목적지")
-                DestinationManager.shared.saveDestination(destination_ko: address, latitude: latitude, longitude: longitude) { result in
+                let destination = Destination()
+                destination.destination_ko = address
+                destination.latitude = latitude
+                destination.longitude = longitude
+                DestinationManager.shared.saveDestination(destination: destination) { result in
                     if result {
                         DispatchQueue.main.async {
                             self.copyButtton.isHidden = false
                             self.destinationLabel.isHidden = false
                             self.destinationSearchButton.isHidden = true
                             self.changeDestinationButton.isHidden = false
+                            self.copyButtton.isHidden = false
                             self.destinationLabel.text = address
+                            self.setAnnotation(latitudeValue: latitude, longitudeValue: longitude, delta: 0.005, title: "목적지", subtitle: "목적지")
                         }
                     }
                 }
-                
             case let .failure(error):
                 debugPrint("Error : \(error)")
             }

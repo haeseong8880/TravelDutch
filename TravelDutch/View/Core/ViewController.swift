@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import RealmSwift
 
 class ViewController: UITabBarController {
 
@@ -15,6 +16,8 @@ class ViewController: UITabBarController {
         
         // Core 위치
         print(FileManager.default.urls(for: .documentDirectory, in: .userDomainMask))
+        print("PATH => \(Realm.Configuration.defaultConfiguration.fileURL!)")
+        
     }
     
     func rootViewConfigure() {

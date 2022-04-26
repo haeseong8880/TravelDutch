@@ -93,17 +93,17 @@ class MoneyManageViewcontroller: UIViewController {
         layout()
         pickerConfigure()
         
-        let memberMoneyList: [MembersMoney] = MemberMoneyManager.shared.getMemberMoney()
-        if !memberMoneyList.isEmpty {
-            var totalMoney: Int?
-            memberMoneyList.forEach { result in
-                totalMoney = Int(result.getMoney)
-            }
-            guard let totalMoney = totalMoney else { return }
-            totalLabel.text = "\(totalMoney)원"
-        } else {
-            totalLabel.text = "0원"
-        }
+//        let memberMoneyList: [MembersMoney] = MemberMoneyManager.shared.getMemberMoney()
+//        if !memberMoneyList.isEmpty {
+//            var totalMoney: Int?
+//            memberMoneyList.forEach { result in
+//                totalMoney = Int(result.getMoney)
+//            }
+//            guard let totalMoney = totalMoney else { return }
+//            totalLabel.text = "\(totalMoney)원"
+//        } else {
+//            totalLabel.text = "0원"
+//        }
     }
     
     // MARK: - configure
@@ -213,9 +213,9 @@ class MoneyManageViewcontroller: UIViewController {
     }
     
     @objc func moneyaddAction() {
-        MoneyManageManager.shared.createItem(payComment: usedCommentTextField.text!, payType: usedTypeTextField.text!, moneyHistory: usedMoneyTextField.text!) { result in
-            print(result)
-        }
+//        MoneyManageManager.shared.createItem(payComment: usedCommentTextField.text!, payType: usedTypeTextField.text!, moneyHistory: usedMoneyTextField.text!) { result in
+//            print(result)
+//        }
 //        print("create Item result => \(result)")
     }
     
