@@ -58,7 +58,7 @@ class PersonViewController: UIViewController {
         if name.isEmpty || money.isEmpty {
             return alert()
         }else {
-            let getMember = Member()
+            let getMember = MemberModel()
             getMember.money = money
             getMember.name = name
             MemberManager.shared.saveMember(members: getMember) { result in
@@ -85,7 +85,8 @@ class PersonViewController: UIViewController {
         let firstData = MemberManager.shared.getAllMember()
         if firstData != nil {
             firstData.forEach { result in
-                let memberSetting = Member()
+                let memberSetting = MemberModel()
+                memberSetting.id = result.id
                 memberSetting.money = result.money + "원"
                 memberSetting.name = result.name
                 self.personTableView.tableReload(member: memberSetting)

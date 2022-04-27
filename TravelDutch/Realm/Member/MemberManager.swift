@@ -8,25 +8,20 @@
 import Foundation
 import RealmSwift
 
-enum MemberEnum {
-    case name
-    case money
-}
-
 class MemberManager {
     static let shared: MemberManager = MemberManager()
     
-    func getAllMember() -> [Member] {
+    func getAllMember() -> [MemberModel] {
         do {
             let realm = try! Realm()
-            let allMembers = realm.objects(Member.self)
+            let allMembers = realm.objects(MemberModel.self)
             return Array(allMembers)
         } catch {
             print("Error getAllMember \(error.localizedDescription)")
         }
     }
     
-    func saveMember(members: Member, onSuccess: @escaping ((Bool) -> Void)) {
+    func saveMember(members: MemberModel, onSuccess: @escaping ((Bool) -> Void)) {
         do {
             let realm = try! Realm()
             members.id = autoIncrementID()
@@ -41,19 +36,40 @@ class MemberManager {
     
     func autoIncrementID() -> Int {
         let realm = try! Realm()
-        return (realm.objects(Member.self).max(ofProperty: "id") as Int? ?? 0) + 1
+        return (realm.objects(MemberModel.self).max(ofProperty: "id") as Int? ?? 0) + 1
     }
     
-    func updateMember(members: Member, newData: String, type: MemberEnum ,onSuccess: @escaping((Bool) -> Void)) {
+    func updateMember(with: MemberModel, newData: String, type: MemberEnum ,onSuccess: @escaping((Bool) -> Void)) {
         do {
             let realm = try! Realm()
-            guard let data = realm.objects(Member.self).filter("id == %@", members.id).first else { return }
-            try realm.write {
-                data.name = newData
+            guard let data = realm.objects(MemberModel.self).filter("id == %@", with.id).first else { return }
+            if type == .name {
+                try realm.write {
+                    data.name = newData
+                }
             }
+            else if type == .money {
+                try realm.write {
+                    data.money = newData
+                }
+            }
+            print(data)
             onSuccess(true)
         } catch {
             print("updateMember => \(error.localizedDescription)")
+        }
+    }
+    
+    func deleteMember(with: MemberModel, onSucess: @escaping((Bool) -> Void)) {
+        do {
+            let realm = try! Realm()
+            guard let data = realm.objects(MemberModel.self).filter("id == %@", with.id).first else { return }
+            try realm.write {
+                realm.delete(data)
+            }
+            onSucess(true)
+        } catch {
+            print("deleteMember ====> \(error.localizedDescription)")
         }
     }
 }

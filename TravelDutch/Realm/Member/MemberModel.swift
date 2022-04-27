@@ -8,7 +8,7 @@
 import Foundation
 import RealmSwift
 
-class Member: Object {
+class MemberModel: Object {
     @Persisted var id: Int = 0
     @Persisted var money: String = ""
     @Persisted var name: String = ""

@@ -88,22 +88,29 @@ class MoneyManageViewcontroller: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        
         configure()
         layout()
         pickerConfigure()
-        
-//        let memberMoneyList: [MembersMoney] = MemberMoneyManager.shared.getMemberMoney()
-//        if !memberMoneyList.isEmpty {
-//            var totalMoney: Int?
-//            memberMoneyList.forEach { result in
-//                totalMoney = Int(result.getMoney)
-//            }
-//            guard let totalMoney = totalMoney else { return }
-//            totalLabel.text = "\(totalMoney)원"
-//        } else {
-//            totalLabel.text = "0원"
-//        }
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        firstData()
+    }
+    
+    private func firstData() {
+        let memberMoneyList: [MemberModel] = MemberManager.shared.getAllMember()
+        var totalMoney: Int = 0
+        print(MemberManager.shared.getAllMember())
+        if !memberMoneyList.isEmpty {
+            memberMoneyList.forEach { result in
+                totalMoney += Int(result.money)!
+            }
+            print("=====>\(totalMoney)")
+            totalLabel.text = "\(totalMoney)원"
+        } else {
+            totalLabel.text = "\(totalMoney)원"
+        }
     }
     
     // MARK: - configure
@@ -151,13 +158,13 @@ class MoneyManageViewcontroller: UIViewController {
         }
         
         usedTypeLabel.snp.makeConstraints {
-            $0.top.equalTo(totalLabel.snp.bottom).offset(15)
+            $0.top.equalTo(noticeLabel.snp.bottom).offset(15)
             $0.leading.equalToSuperview().inset(20)
             $0.width.equalTo((UIScreen.main.bounds.width / 2) - 30)
         }
         
         usedTypeTextField.snp.makeConstraints {
-            $0.top.equalTo(totalLabel.snp.bottom).offset(10)
+            $0.top.equalTo(noticeLabel.snp.bottom).offset(10)
             $0.leading.equalTo(usedTypeLabel.snp.trailing).offset(10)
             $0.trailing.equalToSuperview().inset(20)
         }

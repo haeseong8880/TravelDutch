@@ -8,7 +8,7 @@
 import Foundation
 import RealmSwift
 
-class Destination: Object {
+class DestinationModel: Object {
     @Persisted var id: Int = 0
     @Persisted var destination_ko: String = ""
     @Persisted var latitude: Double = 0.0

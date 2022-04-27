@@ -10,17 +10,17 @@ import RealmSwift
 class DestinationManager {
     static let shared: DestinationManager = DestinationManager()
     
-    func getDestination() -> Destination? {
+    func getDestination() -> DestinationModel? {
         do {
             let realm = try! Realm()
-            let destination = realm.objects(Destination.self).first
+            let destination = realm.objects(DestinationModel.self).first
             return destination
         } catch {
             print("Error getDestination \(error.localizedDescription)")
         }
     }
     
-    func saveDestination(destination: Destination, onSuccess: @escaping ((Bool) -> Void)) {
+    func saveDestination(destination: DestinationModel, onSuccess: @escaping ((Bool) -> Void)) {
         do{
             let realm = try! Realm()
             try realm.write{
@@ -35,7 +35,7 @@ class DestinationManager {
     func deleteDestination(onSuccess: @escaping ((Bool) -> Void)) {
         do {
             let realm = try! Realm()
-            let deleteItem: Destination = self.getDestination()!
+            let deleteItem: DestinationModel = self.getDestination()!
             try! realm.write {
                 realm.delete(deleteItem)
             }

@@ -6,7 +6,7 @@
 //
 
 
-enum ActionStyle {
+enum MemberEnum {
     case name
     case money
 }

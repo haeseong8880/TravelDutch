@@ -197,7 +197,7 @@ extension TravelMapViewController: sendDataDelegate {
             case let .success(result):
                 guard let latitude = Double(result.documents.first!.y), let longitude = Double(result.documents.first!.x) else { return }
                 self.setAnnotation(latitudeValue: latitude, longitudeValue: longitude, delta: 0.005, title: "목적지", subtitle: "목적지")
-                let destination = Destination()
+                let destination = DestinationModel()
                 destination.destination_ko = address
                 destination.latitude = latitude
                 destination.longitude = longitude
