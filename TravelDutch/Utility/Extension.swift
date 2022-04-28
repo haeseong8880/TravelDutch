@@ -30,5 +30,14 @@ public extension UITextField {
         style.lineSpacing = 15
         let attributes = [NSAttributedString.Key.paragraphStyle : style, NSAttributedString.Key.foregroundColor : UIColor.darkGray, NSAttributedString.Key.font :  UIFont.systemFont(ofSize: 13)]
         self.attributedText = NSAttributedString(string: self.text!, attributes: attributes)
-      }
+    }
+}
+
+extension Date {
+    func toString() -> String {
+        let dateFormatter = DateFormatter()
+        dateFormatter.dateFormat = "yyyy-MM-dd HH:mm"
+        dateFormatter.locale = Locale(identifier: "ko_KR")
+        return dateFormatter.string(from: self)
+    }
 }

@@ -34,7 +34,7 @@ class MemberManager {
         }
     }
     
-    func autoIncrementID() -> Int {
+    private func autoIncrementID() -> Int {
         let realm = try! Realm()
         return (realm.objects(MemberModel.self).max(ofProperty: "id") as Int? ?? 0) + 1
     }

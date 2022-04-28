@@ -11,7 +11,7 @@ class MoneyManageTableViewCell: UITableViewCell {
     static let id = "MoneyManageTableViewCell"
     
     // MARK: - Properties
-//    var items: MoneyManage = MoneyManage()
+    var item: MoneyHistoryModel = MoneyHistoryModel()
     
     private let timeStampLabel = UILabel().then {
         $0.font = .systemFont(ofSize: 15, weight: .medium)
@@ -33,14 +33,6 @@ class MoneyManageTableViewCell: UITableViewCell {
         $0.textAlignment = .center
     }
     
-    // MARK: - action
-    private func dateToString(with: Date) -> String {
-        let dateFormatter = DateFormatter()
-        dateFormatter.dateFormat = "yy-MM-dd HH:mm"
-        
-        return dateFormatter.string(from: with)
-    }
-    
     // MARK: - layoutSubViews
     override func layoutSubviews() {
         super.layoutSubviews()
@@ -51,10 +43,10 @@ class MoneyManageTableViewCell: UITableViewCell {
     
     // MARK: - configure
     private func configure() {
-//        payTypeLabel.text = items.payType
-//        timeStampLabel.text = dateToString(with: (items.timeStamp!))
-//        PayCommentLabel.text = items.payComment
-//        moneyHistoryLabel.text = items.moneyHistory
+        payTypeLabel.text = item.payType
+        timeStampLabel.text = item.timeStamp
+        PayCommentLabel.text = item.payComment
+        moneyHistoryLabel.text = item.moneyHistory
     }
     
     // MARK: - Layout
@@ -64,19 +56,13 @@ class MoneyManageTableViewCell: UITableViewCell {
         timeStampLabel.snp.makeConstraints {
             $0.top.equalToSuperview().offset(10)
             $0.leading.equalToSuperview().inset(20)
-            $0.width.equalTo(120)
+            $0.width.equalTo(150)
         }
         
         payTypeLabel.snp.makeConstraints {
             $0.leading.equalTo(timeStampLabel.snp.leading)
             $0.top.equalTo(timeStampLabel.snp.bottom).offset(10)
-            $0.width.equalTo(120)
-        }
-        
-        moneyHistoryLabel.snp.makeConstraints {
-            $0.top.equalTo(payTypeLabel.snp.bottom).offset(5)
-            $0.leading.equalTo(timeStampLabel.snp.leading)
-            $0.trailing.equalTo(timeStampLabel.snp.trailing)
+            $0.width.equalTo(150)
         }
         
         PayCommentLabel.snp.makeConstraints {
@@ -84,7 +70,13 @@ class MoneyManageTableViewCell: UITableViewCell {
             $0.leading.equalTo(payTypeLabel.snp.trailing)
             $0.trailing.equalToSuperview()
             $0.top.equalTo(payTypeLabel.snp.top)
-            $0.bottom.equalTo(moneyHistoryLabel.snp.bottom)
+//            $0.bottom.equalTo(moneyHistoryLabel.snp.bottom)
+        }
+        
+        moneyHistoryLabel.snp.makeConstraints {
+            $0.top.equalTo(PayCommentLabel.snp.bottom).offset(5)
+            $0.leading.equalTo(PayCommentLabel.snp.leading)
+            $0.trailing.equalToSuperview()
         }
     }
 }

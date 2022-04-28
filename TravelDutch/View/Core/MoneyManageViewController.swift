@@ -81,7 +81,7 @@ class MoneyManageViewcontroller: UIViewController {
         $0.setTitleColor(.white, for: .normal)
         $0.backgroundColor = .systemBlue
         $0.layer.cornerRadius = 5
-        $0.addTarget(self, action: #selector(moneyaddAction), for: .touchUpInside)
+        $0.addTarget(self, action: #selector(moneyAddAction), for: .touchUpInside)
     }
     
     // MARK: - LifeCycle
@@ -101,12 +101,10 @@ class MoneyManageViewcontroller: UIViewController {
     private func firstData() {
         let memberMoneyList: [MemberModel] = MemberManager.shared.getAllMember()
         var totalMoney: Int = 0
-        print(MemberManager.shared.getAllMember())
         if !memberMoneyList.isEmpty {
             memberMoneyList.forEach { result in
                 totalMoney += Int(result.money)!
             }
-            print("=====>\(totalMoney)")
             totalLabel.text = "\(totalMoney)원"
         } else {
             totalLabel.text = "\(totalMoney)원"
@@ -219,11 +217,20 @@ class MoneyManageViewcontroller: UIViewController {
         self.view.endEditing(true)
     }
     
-    @objc func moneyaddAction() {
-//        MoneyManageManager.shared.createItem(payComment: usedCommentTextField.text!, payType: usedTypeTextField.text!, moneyHistory: usedMoneyTextField.text!) { result in
-//            print(result)
-//        }
-//        print("create Item result => \(result)")
+    @objc func moneyAddAction() {
+        let history = MoneyHistoryModel()
+        let today = Date()
+        
+        history.moneyHistory = usedMoneyTextField.text!
+        history.payType = usedTypeTextField.text!
+        history.payComment = usedCommentTextField.text!
+        history.timeStamp = today.toString()
+        MoneyHistoryManager.shared.saveMoneyHistory(history: history) { result in
+            print("moneyAddAction ====> \(result)")
+            if result {
+                self.moneyManageTableView.tableReload(history: history)
+            }
+        }
     }
     
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?){

@@ -20,4 +20,22 @@ class MoneyHistoryManager {
             print("Error getAllMember \(error.localizedDescription)")
         }
     }
+    
+    func saveMoneyHistory(history: MoneyHistoryModel, onSuccess: @escaping((Bool) -> Void)) {
+        do {
+            let realm = try! Realm()
+            history.id = autoIncrementID()
+            try realm.write{
+                realm.add(history)
+            }
+            onSuccess(true)
+        } catch {
+            print("Error saveMoneyHistory \(error.localizedDescription)")
+        }
+    }
+    
+    private func autoIncrementID() -> Int {
+        let realm = try! Realm()
+        return (realm.objects(MoneyHistoryModel.self).max(ofProperty: "id") as Int? ?? 0) + 1
+    }
 }

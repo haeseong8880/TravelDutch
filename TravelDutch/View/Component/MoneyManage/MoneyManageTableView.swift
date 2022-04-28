@@ -11,8 +11,7 @@ import UIKit
 class MoneyManageTableView: UITableView {
     
     // MARK: - Properties
-//    private var moneyManagedList: [MoneyManage] = [MoneyManage]()
-//    private var moneyManagedList = []
+    private var moneyHistoryList: [MoneyHistoryModel] = []
     
     // MARK: - LifeCycle
     override init(frame: CGRect, style: UITableView.Style) {
@@ -36,30 +35,35 @@ class MoneyManageTableView: UITableView {
     
     // MARK: - Configure
     private func configure() {
-        
-//        let moneyManage = MoneyManageManager.shared.getAllMoneyManage()
-//        if !moneyManage.isEmpty {
-//            moneyManagedList = moneyManage
-//        }
+        let moneyHistory = MoneyHistoryManager.shared.getAllMoneyHistory()
+        if !moneyHistory.isEmpty {
+            moneyHistoryList = moneyHistory
+        }
     }
     
     // MARK: - Layout
     private func layout() {
         
     }
+    
+    func tableReload(history: MoneyHistoryModel){
+        DispatchQueue.main.async {
+            self.moneyHistoryList.append(history)
+            self.reloadData()
+        }
+    }
 }
 
 extension MoneyManageTableView: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-//        return moneyManagedList.count
-        return 5
+        return moneyHistoryList.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         guard let cell = tableView.dequeueReusableCell(withIdentifier: MoneyManageTableViewCell.id, for: indexPath) as? MoneyManageTableViewCell else { return UITableViewCell() }
-//        moneyManagedList.forEach { result in
-//            cell.items = result
-//        }
+        moneyHistoryList.forEach { result in
+            cell.item = result
+        }
         
         return cell
     }
