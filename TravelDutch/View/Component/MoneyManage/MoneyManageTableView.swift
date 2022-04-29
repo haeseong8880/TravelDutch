@@ -37,7 +37,9 @@ class MoneyManageTableView: UITableView {
     private func configure() {
         let moneyHistory = MoneyHistoryManager.shared.getAllMoneyHistory()
         if !moneyHistory.isEmpty {
-            moneyHistoryList = moneyHistory
+            moneyHistory.forEach { result in
+                moneyHistoryList.append(result)
+            }
         }
     }
     
@@ -47,6 +49,7 @@ class MoneyManageTableView: UITableView {
     }
     
     func tableReload(history: MoneyHistoryModel){
+        print(history)
         DispatchQueue.main.async {
             self.moneyHistoryList.append(history)
             self.reloadData()
@@ -61,15 +64,12 @@ extension MoneyManageTableView: UITableViewDelegate, UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         guard let cell = tableView.dequeueReusableCell(withIdentifier: MoneyManageTableViewCell.id, for: indexPath) as? MoneyManageTableViewCell else { return UITableViewCell() }
-        moneyHistoryList.forEach { result in
-            cell.item = result
-        }
-        
+        cell.item = moneyHistoryList[indexPath.row]
         return cell
     }
 
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        return 100
+        return 60
     }
     
 }

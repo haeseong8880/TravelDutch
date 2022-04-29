@@ -10,8 +10,8 @@ import UIKit
 class MoneyManageViewcontroller: UIViewController {
     
     // MARK: - Properties
-    private var total: Int = 0
     private let moneyManageTableView = MoneyManageTableView()
+    
     var pickerList = ["교통 🚎", "숙박 🏨", "식비 🍚", "쇼핑 🛍", "기타"]
     
     var toolbar: UIToolbar!
@@ -19,12 +19,12 @@ class MoneyManageViewcontroller: UIViewController {
     var picker: UIPickerView!
     
     private let noticeLabel = UILabel().then {
-        $0.text = "총 금액 ➡️ "
+        $0.text = "모인 금액 ➡️ "
         $0.font = .systemFont(ofSize: 22, weight: .bold)
     }
     
     private let totalLabel = UILabel().then {
-        $0.font = .systemFont(ofSize: 22, weight: .bold)
+        $0.font = .systemFont(ofSize: 20, weight: .bold)
         $0.textAlignment = .right
     }
     
@@ -46,6 +46,11 @@ class MoneyManageViewcontroller: UIViewController {
     private let moneyHistoryLabel = UILabel().then {
         $0.font = .systemFont(ofSize: 30, weight: .bold)
         $0.text = "사용 내역 📝"
+    }
+    
+    private let calUsedLabel = UILabel().then {
+        $0.font = .systemFont(ofSize: 20, weight: .bold)
+        $0.textAlignment = .right
     }
     
     private let usedTypeTextField = UITextField().then {
@@ -84,10 +89,20 @@ class MoneyManageViewcontroller: UIViewController {
         $0.addTarget(self, action: #selector(moneyAddAction), for: .touchUpInside)
     }
     
+    private let payUsedLabel = UILabel().then {
+        $0.font = .systemFont(ofSize: 22, weight: .bold)
+        $0.text = "계산 된 금액 💸"
+    }
+    
+    private let payUsedCalLabel = UILabel().then {
+        $0.font = .systemFont(ofSize: 20, weight: .bold)
+        $0.textAlignment = .right
+    }
+    
     // MARK: - LifeCycle
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        
         configure()
         layout()
         pickerConfigure()
@@ -95,20 +110,41 @@ class MoneyManageViewcontroller: UIViewController {
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        firstData()
+        DispatchQueue.main.async { [weak self] in
+            guard let self = self else { return }
+            self.getTotalMoneyCal()
+            self.usedTotalMoneyCal()
+            self.totalMoneyCal()
+        }
     }
     
-    private func firstData() {
+    private func getTotalMoneyCal() {
         let memberMoneyList: [MemberModel] = MemberManager.shared.getAllMember()
         var totalMoney: Int = 0
         if !memberMoneyList.isEmpty {
-            memberMoneyList.forEach { result in
-                totalMoney += Int(result.money)!
+            memberMoneyList.forEach {
+                totalMoney += Int($0.money)!
             }
-            totalLabel.text = "\(totalMoney)원"
-        } else {
-            totalLabel.text = "\(totalMoney)원"
         }
+        totalLabel.text = "\(totalMoney)원"
+    }
+    
+    private func usedTotalMoneyCal() {
+        let moneyHisotryList: [MoneyHistoryModel] = MoneyHistoryManager.shared.getAllMoneyHistory()
+        var totalMoney: Int = 0
+        if !moneyHisotryList.isEmpty {
+            moneyHisotryList.forEach {
+                totalMoney += Int($0.moneyHistory)!
+            }
+        }
+        calUsedLabel.text = "\(totalMoney)원"
+    }
+    
+    private func totalMoneyCal() {
+        let memberMoney: Int = Int(totalLabel.text!.replacingOccurrences(of: "원", with: ""))!
+        let moneyHistory: Int = Int(calUsedLabel.text!.replacingOccurrences(of: "원", with: ""))!
+        
+        payUsedCalLabel.text = "\(memberMoney - moneyHistory)원"
     }
     
     // MARK: - configure
@@ -141,7 +177,7 @@ class MoneyManageViewcontroller: UIViewController {
     
     // MARK: - Layout
     private func layout() {
-        [ noticeLabel, totalLabel, usedTypeLabel, usedTypeTextField, usedCommentLabel, usedCommentTextField, usedMoneyLabel, usedMoneyTextField, moneyAddButton, moneyHistoryLabel, moneyManageTableView ].forEach { view.addSubview($0) }
+        [ noticeLabel, totalLabel, usedTypeLabel, usedTypeTextField, usedCommentLabel, usedCommentTextField, usedMoneyLabel, usedMoneyTextField, moneyAddButton, moneyHistoryLabel, moneyManageTableView, calUsedLabel, payUsedLabel, payUsedCalLabel ].forEach { view.addSubview($0) }
         
         noticeLabel.snp.makeConstraints {
             $0.top.equalTo(view.safeAreaLayoutGuide).inset(10)
@@ -152,7 +188,7 @@ class MoneyManageViewcontroller: UIViewController {
         totalLabel.snp.makeConstraints {
             $0.top.equalTo(view.safeAreaLayoutGuide).inset(10)
             $0.leading.equalTo(noticeLabel.snp.trailing).inset(10)
-            $0.trailing.equalToSuperview().inset(20)
+            $0.trailing.equalToSuperview().inset(10)
         }
         
         usedTypeLabel.snp.makeConstraints {
@@ -200,14 +236,32 @@ class MoneyManageViewcontroller: UIViewController {
         moneyHistoryLabel.snp.makeConstraints {
             $0.top.equalTo(moneyAddButton.snp.bottom).offset(20)
             $0.leading.equalToSuperview().inset(20)
-            $0.trailing.equalToSuperview().inset(20)
+            $0.width.equalTo(180)
+        }
+        
+        calUsedLabel.snp.makeConstraints {
+            $0.top.equalTo(moneyHistoryLabel.snp.top).inset(5)
+            $0.trailing.equalToSuperview().inset(10)
+            $0.leading.equalTo(moneyHistoryLabel.snp.trailing).inset(30)
         }
         
         moneyManageTableView.snp.makeConstraints {
             $0.top.equalTo(moneyHistoryLabel.snp.bottom).offset(10)
-            $0.leading.equalToSuperview().inset(10)
-            $0.trailing.equalToSuperview().inset(20)
-            $0.bottom.equalTo(view.safeAreaLayoutGuide)
+            $0.leading.equalToSuperview()
+            $0.trailing.equalToSuperview()
+            $0.bottom.equalTo(payUsedLabel.snp.top)
+        }
+        
+        payUsedLabel.snp.makeConstraints {
+            $0.leading.equalToSuperview().inset(20)
+            $0.bottom.equalTo(view.safeAreaLayoutGuide).inset(30)
+            $0.width.equalTo(180)
+        }
+        
+        payUsedCalLabel.snp.makeConstraints {
+            $0.top.equalTo(payUsedLabel.snp.top).inset(5)
+            $0.trailing.equalToSuperview().inset(10)
+            $0.leading.equalTo(payUsedLabel.snp.trailing).inset(30)
         }
         
     }
@@ -225,10 +279,16 @@ class MoneyManageViewcontroller: UIViewController {
         history.payType = usedTypeTextField.text!
         history.payComment = usedCommentTextField.text!
         history.timeStamp = today.toString()
-        MoneyHistoryManager.shared.saveMoneyHistory(history: history) { result in
-            print("moneyAddAction ====> \(result)")
-            if result {
+        MoneyHistoryManager.shared.saveMoneyHistory(history: history) {
+            if $0 {
                 self.moneyManageTableView.tableReload(history: history)
+                self.usedTypeTextField.text = nil
+                self.usedMoneyTextField.text = nil
+                self.usedCommentTextField.text = nil
+                self.picker = nil
+                self.getTotalMoneyCal()
+                self.usedTotalMoneyCal()
+                self.totalMoneyCal()
             }
         }
     }
