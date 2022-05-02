@@ -31,16 +31,13 @@ class ViewController: UITabBarController {
         let moneyManageViewController = UINavigationController(rootViewController: MoneyManageViewcontroller())
         moneyManageViewController.tabBarItem = UITabBarItem(title: "돈 관리", image: UIImage(systemName: "creditcard"), selectedImage: UIImage(systemName: "creditcard.fill"))
         
-        let reportViewController = UINavigationController(rootViewController: ReportViewController())
-        reportViewController.tabBarItem = UITabBarItem(title: "레포트", image: UIImage(systemName: "doc"), selectedImage: UIImage(systemName: "doc.fill"))
+//        let reportViewController = UINavigationController(rootViewController: ReportViewController())
+//        reportViewController.tabBarItem = UITabBarItem(title: "레포트", image: UIImage(systemName: "doc"), selectedImage: UIImage(systemName: "doc.fill"))
+//
+//        let settingViewController = UINavigationController(rootViewController: SettingViewController())
+//        settingViewController.tabBarItem = UITabBarItem(title: "설정", image: UIImage(systemName: "gearshape"), selectedImage : UIImage(systemName: "gearshape.fill"))
         
-        let settingViewController = UINavigationController(rootViewController: SettingViewController())
-        settingViewController.tabBarItem = UITabBarItem(title: "설정", image: UIImage(systemName: "gearshape"), selectedImage : UIImage(systemName: "gearshape.fill"))
-        
-//        let mettingViewController = UINavigationController(rootViewController: MettingViewController())
-//        mettingViewController.tabBarItem = UITabBarItem(title: "모임", image: UIImage(systemName: "bookmark"), selectedImage: UIImage(systemName: "bookmark.fill"))
-        
-        viewControllers = [ travelViewController, personViewController, moneyManageViewController, reportViewController, settingViewController ]
+        viewControllers = [ travelViewController, personViewController, moneyManageViewController, ]
     }
 }
 
