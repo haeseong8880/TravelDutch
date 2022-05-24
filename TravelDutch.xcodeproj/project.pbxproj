@@ -14,7 +14,6 @@
 		3135813228183E240014745D /* MemberManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3135813128183E240014745D /* MemberManager.swift */; };
 		3135813528191A610014745D /* MoneyHistoryModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3135813428191A610014745D /* MoneyHistoryModel.swift */; };
 		3135813728191AC10014745D /* MoneyHistoryManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3135813628191AC10014745D /* MoneyHistoryManager.swift */; };
-		316778A0281262C900E0349C /* TravelDutchCoreData.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 3167789E281262C900E0349C /* TravelDutchCoreData.xcdatamodeld */; };
 		316B8D2A2816DD1A00C8B1F4 /* RealmSwift in Frameworks */ = {isa = PBXBuildFile; productRef = 316B8D292816DD1A00C8B1F4 /* RealmSwift */; };
 		316B8D2D2816DDF500C8B1F4 /* DestinationModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 316B8D2C2816DDF500C8B1F4 /* DestinationModel.swift */; };
 		316B8D2F2816FF7800C8B1F4 /* DestinationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 316B8D2E2816FF7800C8B1F4 /* DestinationManager.swift */; };
@@ -51,7 +50,6 @@
 		3135813128183E240014745D /* MemberManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MemberManager.swift; sourceTree = "<group>"; };
 		3135813428191A610014745D /* MoneyHistoryModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MoneyHistoryModel.swift; sourceTree = "<group>"; };
 		3135813628191AC10014745D /* MoneyHistoryManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MoneyHistoryManager.swift; sourceTree = "<group>"; };
-		3167789F281262C900E0349C /* TravelDutchCoreData.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = TravelDutchCoreData.xcdatamodel; sourceTree = "<group>"; };
 		316B8D2C2816DDF500C8B1F4 /* DestinationModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DestinationModel.swift; sourceTree = "<group>"; };
 		316B8D2E2816FF7800C8B1F4 /* DestinationManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DestinationManager.swift; sourceTree = "<group>"; };
 		317D43622803E40500DC209F /* MoneyManageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MoneyManageViewController.swift; sourceTree = "<group>"; };
@@ -148,14 +146,6 @@
 			path = PersonTable;
 			sourceTree = "<group>";
 		};
-		319132CC280C36FF003C14D0 /* CoreData */ = {
-			isa = PBXGroup;
-			children = (
-				3167789E281262C900E0349C /* TravelDutchCoreData.xcdatamodeld */,
-			);
-			path = CoreData;
-			sourceTree = "<group>";
-		};
 		319132D2280C3F60003C14D0 /* KakaoPost */ = {
 			isa = PBXGroup;
 			children = (
@@ -185,10 +175,8 @@
 			children = (
 				31D162192801C33F00454BF0 /* View */,
 				31D162182801C33500454BF0 /* Utility */,
-				31D162172801C33000454BF0 /* Service */,
 				31D162162801C32700454BF0 /* Repository */,
 				31D162142801C31800454BF0 /* Entity */,
-				319132CC280C36FF003C14D0 /* CoreData */,
 				316B8D2B2816DDC800C8B1F4 /* Realm */,
 				31D161FA2801C2CA00454BF0 /* AppDelegate.swift */,
 				31D161FC2801C2CA00454BF0 /* SceneDelegate.swift */,
@@ -217,13 +205,6 @@
 				319132D5280D01F7003C14D0 /* KakaoMapRepository.swift */,
 			);
 			path = Repository;
-			sourceTree = "<group>";
-		};
-		31D162172801C33000454BF0 /* Service */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Service;
 			sourceTree = "<group>";
 		};
 		31D162182801C33500454BF0 /* Utility */ = {
@@ -351,7 +332,6 @@
 			files = (
 				31D162212801C38700454BF0 /* PersonViewController.swift in Sources */,
 				31D161FB2801C2CA00454BF0 /* AppDelegate.swift in Sources */,
-				316778A0281262C900E0349C /* TravelDutchCoreData.xcdatamodeld in Sources */,
 				316B8D2D2816DDF500C8B1F4 /* DestinationModel.swift in Sources */,
 				312669B42809484500DB1110 /* MoneyManageTableView.swift in Sources */,
 				3135813728191AC10014745D /* MoneyHistoryManager.swift in Sources */,
@@ -639,19 +619,6 @@
 			productName = SnapKit;
 		};
 /* End XCSwiftPackageProductDependency section */
-
-/* Begin XCVersionGroup section */
-		3167789E281262C900E0349C /* TravelDutchCoreData.xcdatamodeld */ = {
-			isa = XCVersionGroup;
-			children = (
-				3167789F281262C900E0349C /* TravelDutchCoreData.xcdatamodel */,
-			);
-			currentVersion = 3167789F281262C900E0349C /* TravelDutchCoreData.xcdatamodel */;
-			path = TravelDutchCoreData.xcdatamodeld;
-			sourceTree = "<group>";
-			versionGroupType = wrapper.xcdatamodel;
-		};
-/* End XCVersionGroup section */
 	};
 	rootObject = 31D161EF2801C2CA00454BF0 /* Project object */;
 }
